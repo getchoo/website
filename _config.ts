@@ -8,8 +8,8 @@ import sass from "lume/plugins/sass.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 
 const site = lume({
-  src: "./src",
-  location: new URL("https://getchoo.github.io"),
+	src: "./src",
+	location: new URL("https://getchoo.github.io"),
 });
 
 site.use(attributes());
@@ -21,23 +21,20 @@ site.use(sass());
 site.use(sitemap());
 
 const getGitRevision = async () => {
-  const p = Deno.run({
-    cmd: ["git", "rev-parse", "HEAD"],
-    stdout: "piped",
-  });
-  const [status, output] = await Promise.all([p.status(), p.output()]);
+	const p = Deno.run({
+		cmd: ["git", "rev-parse", "HEAD"],
+		stdout: "piped",
+	});
+	const [status, output] = await Promise.all([p.status(), p.output()]);
 
-  if (status.success) {
-    return new TextDecoder().decode(output).trim();
-  }
+	if (status.success) {
+		return new TextDecoder().decode(output).trim();
+	}
 
-  return null;
+	return null;
 };
 
-site.data(
-  "gitRevision",
-  await getGitRevision(),
-);
+site.data("gitRevision", await getGitRevision());
 
 site.ignore("README.md", "LICENSE", ".gitignore", ".gitattributes");
 

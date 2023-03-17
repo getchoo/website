@@ -1,0 +1,31 @@
+name: format
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v3
+
+      - name: install prettier
+        run: |
+          npm install -g prettier
+
+      - name: format
+        run: prettier --editorconfig -w .
+
+      - name: add and commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: "chore: format with prettier"
