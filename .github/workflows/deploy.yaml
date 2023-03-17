@@ -24,7 +24,7 @@ jobs:
       
       - name: build site
         run: |
-          sed "s/commit:/commit: $GITHUB_SHA/" src/_includes/layouts/base.njk
+          sed -i "s/commit:/commit: $GITHUB_SHA/" src/_includes/layouts/base.njk
           deno task build
 
       - name: setup pages
