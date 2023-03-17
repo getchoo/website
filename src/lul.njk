@@ -4,11 +4,10 @@ description: xd
 ---
 
 {% extends "_includes/layouts/base.njk" %}
-{% block body %}
+{% block container %}
   <div id="vidya">
     <video width="1280" height="720" controls="controls" autoplay="autoplay" muted="muted">
       <source src="/files/rickroll.mp4" type="video/mp4"/>
     </video>
   </div>
 {% endblock %}
-{% block footer %}{% endblock %}

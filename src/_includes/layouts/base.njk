@@ -10,46 +10,24 @@
       <link rel="stylesheet" href="/guzzle.css"/>
     </head>
   {% endblock %}
-  {% block body %}
-    <body>
+  <body>
+    {% block container %}
       <div class="container">
-        <div class="content">
-          {% block content %}
-            {{ content | safe }}
-          {% endblock %}
-        </div>
-        {% block footer %}
-          <div class="gifs">
-            <script type="module" src="/js/chrisApp.js"></script>
-            <img src="/imgs/gifs/legalize.gif" alt="legalize now!"/>
-            <img src="/imgs/gifs/acab.gif" alt="acab"/>
-            <img src="/imgs/gifs/poweredbyfedora.gif" alt="powered by fedora"/>
-            <img src="/imgs/gifs/capitalism.gif" alt="let's crush capitalism!"/>
-            <br/> <img src="/imgs/gifs/anybrowser.gif" alt="best viewed with any browser"/>
-            <img src="/imgs/gifs/weezer.gif" alt="weezer fan"/>
-            <img src="/imgs/gifs/steam.gif" alt="play with steam"/>
-            <img src="/imgs/gifs/vi.gif" alt="made with vi"/>
-            <img src="/imgs/gifs/pride.gif" alt="pride"/>
-            <img src="/imgs/gifs/imagine.gif" alt="imagination"/>
-            <br/> <img src="/imgs/gifs/moz.gif" alt="mozilla is cool"/>
-            <img src="/imgs/gifs/free.gif" alt="completely free software"/>
-            <img src="/imgs/gifs/gimp.gif" alt="graphics by gimp"/>
-            <img src="/imgs/gifs/explorer.gif" alt="marijuana mind explorer"/>
-            <img src="/imgs/gifs/jsfree.gif" alt="javascript free"/>
-            <img src="/imgs/gifs/web3.gif" alt="keep the web free! say no to web3!"/>
-            <img src="/imgs/gifs/tired.gif" alt="tired"/>
-            <img src="/imgs/gifs/arnold.gif" alt="hey arnold!"/>
-            <img src="/imgs/gifs/bob.gif" alt="powered by bob"/>
-            <img src="/imgs/gifs/counterstrike.gif" alt="counter-strike player"/>
-            <img src="/imgs/gifs/chris.gif" alt="chris troll" id="chris_gif"/>
+        {% block body %}
+          <div class="content">
+            {% block content %}
+              {{ content | safe }}
+            {% endblock %}
           </div>
         {% endblock %}
-      </div>
-    </body>
-  {% endblock %}
-  <br \>
-  <footer>
-    <a href="https://github.com/getchoo/getchoo.github.io">source</a>
-    commit:
-  </footer>
+      {% endblock %}
+    </div>
+    <br \>
+    <footer>
+      {% block footer %}
+        <a href="https://github.com/getchoo/getchoo.github.io">source</a>
+        commit:
+      {% endblock %}
+    </footer>
+  </body>
 </html>
