@@ -21,11 +21,9 @@ jobs:
         uses: denoland/setup-deno@v1
         with:
           deno-version: v1.31.3
-      
+
       - name: build site
-        run: |
-          sed -i "s/commit:/commit: $GITHUB_SHA/" src/_includes/layouts/base.njk
-          deno task build
+        run: deno task build
 
       - name: setup pages
         uses: actions/configure-pages@v3
@@ -34,7 +32,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: '_site'
-      
+
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v1
