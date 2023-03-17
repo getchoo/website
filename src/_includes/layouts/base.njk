@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{ title }}</title>
-    <meta name="description" content="{{ description }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/guzzle.css" />
-    <script type="module" src="/js/chrisApp.js"></script>
-  </head>
-  <body>
-    {{ content | safe }}
-    {% block footer %}
-    <footer>
-      <a href="https://github.com/getchoo/getchoo.github.io">source</a>
-      commit: {{ gitRevision }}
-    </footer>
-    {% endblock %}
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>{{ title }}</title>
+		<meta name="description" content="{{ description }}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/guzzle.css" />
+		<script type="module" src="/js/chrisApp.js"></script>
+	</head>
+	<body>
+		{{ content | safe }}
+		{% block footer %}
+		<footer>
+			<a href="https://github.com/getchoo/getchoo.github.io">source</a>
+			commit: {{ gitRevision }}
+		</footer>
+		{% endblock %}
+	</body>
 </html>
