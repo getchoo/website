@@ -7,6 +7,6 @@ description: getchoo's website
 <h1 id="indexHeader">getchoo's website 🦕</h1>
 this is under construction. i'm experimenting with lume
 
-![construction](/imgs/construction.png)
+![construction](/imgs/gifs/obras.gif)
 
 [click here](/lul/)
