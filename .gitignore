@@ -1,2 +1,10 @@
+# lume build output
 _site
+
+# vscode settings
 .vscode/
+
+# nix stuff
+result
+.direnv/
+.pre-commit-config.yaml
