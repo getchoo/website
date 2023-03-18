@@ -1,0 +1,8 @@
+---
+layout: "layouts/page.njk"
+title: "getchoo's blog"
+description: "getchoo's blog posts"
+---
+
+{% set postList = search.pages("type=posts", "date=desc", 3) %}
+{% include "components/postlist.njk" %}

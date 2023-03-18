@@ -1,0 +1,14 @@
+<div>
+	<ul class="postList">
+		{% for post in postList %}
+			<li>
+				<a href="{{ post.data.url }}">{{ post.data.title }}</a>
+				<time class="post-date" datetime="{{ post.data.date | date('DATETIME') }}">
+					{{ post.data.date | date('HUMAN_DATE') }}
+				</time>
+			</li>
+		{% else %}
+			<p>no posts yet! 🥸</p>
+		{% endfor %}
+	</ul>
+</div>

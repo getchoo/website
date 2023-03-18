@@ -38,9 +38,9 @@ site.data("gitRevision", await getGitRevision());
 
 site.ignore("README.md", "LICENSE", ".gitignore", ".gitattributes");
 
-site.copy("imgs");
-site.copy("files");
-site.copy("js");
 site.copy("favicon.ico");
+site.copy("files");
+site.copy("imgs");
+site.copy("js");
 
 export default site;

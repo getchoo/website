@@ -1,5 +1,5 @@
 ---
-layout: layouts/page.njk
+layout: layouts/index.njk
 title: guzzle guzzle
 description: getchoo's website
 ---
