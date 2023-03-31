@@ -43,6 +43,8 @@
           packages = with pkgs; [
             alejandra
             deno
+            fzf
+            just
             nodePackages.prettier
           ];
         };
