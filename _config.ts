@@ -4,21 +4,11 @@ import base_path from "lume/plugins/base_path.ts";
 import code_highlight from "lume/plugins/code_highlight.ts";
 import date from "lume/plugins/date.ts";
 import remark from "lume/plugins/remark.ts";
+import postcss from "lume/plugins/postcss.ts";
 import sass from "lume/plugins/sass.ts";
 import sitemap from "lume/plugins/sitemap.ts";
-
-const site = lume({
-	src: "./src",
-	location: new URL("https://getchoo.github.io"),
-});
-
-site.use(attributes());
-site.use(base_path());
-site.use(code_highlight());
-site.use(date());
-site.use(remark());
-site.use(sass());
-site.use(sitemap());
+import tailwindcss from "lume/plugins/tailwindcss.ts";
+import tailwind_catppuccin from "npm:@catppuccin/tailwindcss@0.1.1";
 
 const getGitRevision = async () => {
 	const p = Deno.run({
@@ -28,19 +18,51 @@ const getGitRevision = async () => {
 	const [status, output] = await Promise.all([p.status(), p.output()]);
 
 	if (status.success) {
-		return new TextDecoder().decode(output).trim();
+		return new TextDecoder().decode(output).trim().substring(0, 8);
 	}
 
 	return null;
 };
 
-site.data("gitRevision", await getGitRevision());
+const site = lume({
+	src: "./src",
+	location: new URL("https://getchoo.github.io"),
+});
 
-site.ignore("README.md", "LICENSE", ".gitignore", ".gitattributes");
-
-site.copy("favicon.ico");
-site.copy("files");
-site.copy("imgs");
-site.copy("js");
+site.use(attributes())
+	.use(base_path())
+	.use(code_highlight())
+	.use(date())
+	.use(remark())
+	.use(sitemap())
+	.use(sass())
+	.use(
+		tailwindcss({
+			options: {
+				plugins: [
+					tailwind_catppuccin({
+						defaultFlavour: "mocha",
+					}),
+				],
+			},
+		})
+	)
+	.use(postcss())
+	.data("gitRevision", await getGitRevision())
+	.ignore(
+		"README.md",
+		"LICENSE",
+		".gitignore",
+		".gitattributes",
+		"flake.nix",
+		"flake.lock",
+		".editorconfig",
+		".prettierignore",
+		".envrc"
+	)
+	.copy("favicon.ico")
+	.copy("files")
+	.copy("imgs")
+	.copy("js");
 
 export default site;

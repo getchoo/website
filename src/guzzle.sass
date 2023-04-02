@@ -1,106 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap')
 
-$fonts: "Noto Sans", "Fira Code", monospace
-$background-color: #1e1e2e
-$foreground-color: #b4befe
-$overlay: #7f849c
-$text: #1e1e2e
-$subtext: #cdd6f4
+@tailwind base
+@tailwind components
+@tailwind utilities
+@tailwind variants
+
+html
+	font-family: "Noto Sans", sans-serif
+
+h1
+	@apply text-2xl
+
+p,li
+	@apply text-base
+
+a
+	@apply underline
+
+button
+	@apply rounded-xl bg-yellow p-2 text-center
 
 body
-	background-color: $background-color
-	font-family: $fonts
-	color: $text
-
-	padding: 10px
-
-	p,li
-		font-size: 16px
-
-	h1
-		font-size: 24px
+	@apply bg-base p-10
 
 footer
-	font-size: 12px
-	color: $subtext
-
-	display: flex
-	align-items: center
-	justify-content: center
+	@apply text-xs flex items-center justify-center
 
 .container
-	background-color: $foreground-color
-
-	display: flex
-	flex: 1 1 auto
-	flex-direction: column
-	align-items: center
-	justify-content: center
-
-	width: fit-content
-	min-width: 33%
-
-	margin-left: auto
-	margin-right: auto
-	margin-top: 2%
-
-	border-radius: 3%
+	@apply bg-lavender
+	@apply flex flex-auto flex-col
+	@apply items-center justify-center
+	@apply w-fit mx-auto
+	@apply rounded-lg
 
 .content
-	display: inline-block
-	text-align: center
-
-	margin: 5px
-	padding: 5px
+	@apply inline-block text-center p-5
+	img
+		// this is dumb
+		@apply mx-auto
 
 .headerbar
-	background-color: $foreground-color
-
-	display: flex
-	flex-direction: column
-	align-items: center
-	justify-content: center
-
-	width: fit-content
-	height: 30px
-
-	margin-left: auto
-	margin-right: auto
-	margin-top: 2%
-
-	border-radius: 5px
-	padding: 10px
+	@apply flex flex-col
+	@apply items-center justify-center
+	@apply mx-auto rounded p-3
 
 #blogpost
-	min-width: 50%
+	@apply w-full items-center
 
 #commitText
-	width: fix-content
-
-	padding: 5px
+	@apply text-subtext1 p-2
 
 #indexHeader
-	background-color: $background-color
-	color: $subtext
-
-	border-radius: 5px
-	padding: 5px
+	@apply bg-base w-fit h-fit mx-auto rounded p-5 text-text
 
 #gifs
-	background-color: $background-color
-	display: inline-block
-	text-align: center
+	@apply bg-base
+	@apply hidden min-[1280px]:flex flex-col gap-2
+	@apply text-center items-center justify-center
+	@apply m-20 mt-0 mb-5 p-10
+	@apply rounded-lg drop-shadow-2xl
 
-	margin: 20px
-	margin-top: 0
-	padding: 20px
-
-	box-shadow: 7px 10px 1px $overlay
-	border-radius: 5px
+#gif
+	@apply flex gap-2
 
 #vidya
-	display: flex
-	justify-content: center
-	padding: 5px
-	margin: 5px
+	@apply flex justify-center p-5
