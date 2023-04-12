@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Powered by NixOS © 2023 by Sake is licensed under (CC BY-NC-SA 4.0)
+    To view the source visit: https://github.com/sakecode/Sake-s-SVGs 
+    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+    
+    It uses the following works, unmodified:
+    NixOS Logo by Tim Cuthbertson(@timbertson) is licensed under (CC BY 4.0)
+    To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/
+    
+    It uses the following fonts:
+    The Vegur font, provided graciously under (CC0 1.0)
+    To view a copy of this license, visit https://creativecommons.org/publicdomain/zero/1.0/
+    Get the font at:
+    http://dotcolon.net/font/vegur/
+-->
+<svg id="b" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 88 31">
+  <defs>
+    <style>
+      .bi {
+        fill: url(#ad);
+      }
+
+      .bj {
+        fill: url(#ah);
+      }
+
+      .bk {
+        fill: url(#ab);
+      }
+
+      .bl {
+        fill: url(#aj);
+      }
+
+      .bm {
+        fill: url(#af);
+      }
+
+      .bn {
+        fill: url(#al);
+      }
+
+      .bo {
+        fill: url(#x);
+      }
+
+      .bp {
+        fill: url(#z);
+      }
+
+      .bq {
+        fill: url(#m);
+      }
+
+      .br {
+        fill: url(#v);
+      }
+
+      .bs {
+        fill: url(#bd);
+      }
+
+      .bs, .bt, .bu, .bv, .bw, .bx, .by {
+        fill-rule: evenodd;
+      }
+
+      .bt {
+        fill: url(#bg);
+      }
+
+      .bu {
+        fill: url(#ba);
+      }
+
+      .bv {
+        fill: url(#av);
+      }
+
+      .bw {
+        fill: url(#ay);
+      }
+
+      .bx {
+        fill: url(#ap);
+      }
+
+      .by {
+        fill: url(#as);
+      }
+
+      .bz {
+        fill: url(#e);
+        stroke: url(#f);
+        stroke-width: .5px;
+      }
+    </style>
+    <linearGradient id="e" x1="388.21" y1="-732.57" x2="388.35" y2="-764.02" gradientTransform="translate(-339.91 -720.15) scale(.99 -.98)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#ebebeb"/>
+    </linearGradient>
+    <linearGradient id="f" x1="385.07" y1="-732.7" x2="385.37" y2="-763.21" gradientTransform="translate(-339.04 -720.24) scale(.99 -.98)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8c8c8"/>
+      <stop offset="1" stop-color="#787878"/>
+    </linearGradient>
+    <linearGradient id="m" x1="49.52" y1="15.87" x2="51.1" y2="15.87" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#415e9a"/>
+      <stop offset=".23" stop-color="#4a6baf"/>
+      <stop offset="1" stop-color="#5277c3"/>
+    </linearGradient>
+    <linearGradient id="v" x1="65.23" y1="10.9" x2="68.78" y2="10.9" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#699ad7"/>
+      <stop offset=".24" stop-color="#7eb1dd"/>
+      <stop offset="1" stop-color="#7ebae4"/>
+    </linearGradient>
+    <linearGradient id="x" x1="61.38" y1="9.05" x2="64.86" y2="9.05" xlink:href="#v"/>
+    <linearGradient id="z" x1="54.94" y1="9.05" x2="58.42" y2="9.05" xlink:href="#v"/>
+    <linearGradient id="ab" x1="51.18" y1="10.04" x2="54.29" y2="10.04" xlink:href="#v"/>
+    <linearGradient id="ad" x1="48.88" y1="10" x2="50.72" y2="10" xlink:href="#v"/>
+    <linearGradient id="af" x1="44.87" y1="10.04" x2="47.98" y2="10.04" xlink:href="#v"/>
+    <linearGradient id="ah" x1="39.39" y1="10.04" x2="44.54" y2="10.04" xlink:href="#v"/>
+    <linearGradient id="aj" x1="35.47" y1="10.04" x2="39.02" y2="10.04" xlink:href="#v"/>
+    <linearGradient id="al" x1="32.02" y1="9.16" x2="35.22" y2="9.16" xlink:href="#v"/>
+    <linearGradient id="ap" x1="224.31" y1="-241.85" x2="229.46" y2="-250.76" gradientTransform="translate(-167.55 -176.77) scale(.8 -.8)" xlink:href="#v"/>
+    <linearGradient id="as" x1="424.01" y1="326.19" x2="429.17" y2="317.28" gradientTransform="translate(-381.06 -153.58) rotate(60) scale(.8 -.8)" xlink:href="#v"/>
+    <linearGradient id="av" x1="-367.32" y1="-352.79" x2="-362.16" y2="-361.71" gradientTransform="translate(-80.86 -373.09) rotate(-60) scale(.8 -.8)" xlink:href="#v"/>
+    <linearGradient id="ay" x1="-559.28" y1="672.04" x2="-554.13" y2="663.12" gradientTransform="translate(-420.72 -523.34) rotate(-180) scale(.8 -.8)" xlink:href="#v"/>
+    <linearGradient id="ba" x1="-569.65" y1="-677.97" x2="-564.59" y2="-686.91" gradientTransform="translate(467.69 -525.72) scale(.8 -.8)" xlink:href="#m"/>
+    <linearGradient id="bd" x1="-761.47" y1="347.27" x2="-756.41" y2="338.33" gradientTransform="translate(-523.24 397.2) rotate(120) scale(.8 -.8)" xlink:href="#m"/>
+    <linearGradient id="bg" x1="-1553.35" y1="-331.81" x2="-1548.28" y2="-340.75" gradientTransform="translate(-827.26 -922.2) rotate(-120) scale(.8 -.8)" xlink:href="#m"/>
+  </defs>
+  <g id="c" data-name="Badge-Layer">
+    <g id="d" data-name="Badge">
+      <path id="g" data-name="rect5035" class="bz" d="m5.03.25h77.94c2.64,0,4.78,1.85,4.78,4.13v22.24c0,2.28-2.14,4.13-4.78,4.13H5.03c-2.64,0-4.78-1.85-4.78-4.13V4.38C.25,2.1,2.39.25,5.03.25Z"/>
+    </g>
+  </g>
+  <g id="h" data-name="Text">
+    <g id="i" data-name="NixOS">
+      <g id="j" data-name="Nix">
+        <path id="k" data-name="X" d="m58.95,17.75h-1.47l-1.8,2.72h-.05l-1.74-2.72h-1.59l2.64,3.6v.05l-2.73,3.74h1.47l1.92-2.93h.05l1.92,2.93h1.59l-2.8-3.8v-.05l2.58-3.54Z"/>
+        <rect id="l" data-name="I" x="49.67" y="17.75" width="1.28" height="7.39"/>
+        <circle id="n" data-name="Dot" class="bq" cx="50.31" cy="15.87" r=".79"/>
+        <path id="o" data-name="N" d="m47.4,14.78h-1.19v5.41c0,.76.03,1.97.08,3.31h-.05c-.6-1.12-1.27-2.18-1.74-2.92l-3.74-5.8h-1.63v10.36h1.19v-5.41c0-.76-.03-2.2-.08-3.53h.05c.89,1.54,1.41,2.4,1.89,3.13l3.74,5.8h1.48v-10.36Z"/>
+      </g>
+      <g id="p" data-name="OS">
+        <g id="q" data-name="S">
+          <path id="r" data-name="path4677" d="m68.84,17.54c0,1.43.75,2.21,2.48,2.91,1.33.54,1.87,1.02,1.87,2,0,1.2-.97,1.79-2.26,1.79-.67,0-1.43-.1-2.27-.39l-.13,1.03c.73.27,1.54.37,2.35.37,2,0,3.68-1.02,3.68-3.06,0-1.42-.87-2.11-2.62-2.81-1.17-.46-1.73-.96-1.73-1.99s.87-1.55,1.96-1.55c.64,0,1.34.16,1.84.36l.13-1.02c-.57-.24-1.27-.36-2.05-.36-1.84,0-3.24,1.06-3.24,2.7h0Z"/>
+        </g>
+        <g id="s" data-name="O">
+          <path id="t" data-name="path4680" d="m63.91,14.89c-2.43,0-4.43,1.96-4.43,5.22s2,5.22,4.43,5.22,4.43-1.96,4.43-5.22-2-5.22-4.43-5.22Zm0,1.02c1.81,0,3.19,1.49,3.19,4.2s-1.38,4.2-3.19,4.2-3.19-1.49-3.19-4.2,1.38-4.2,3.19-4.2Z"/>
+        </g>
+      </g>
+    </g>
+    <g id="u" data-name="PoweredBy">
+      <path id="w" data-name="Y" class="br" d="m67.36,11.95c-.32.87-.92,1.5-1.68,1.72l-.23-.56c.58-.21,1.02-.55,1.21-1.1l-1.43-3.89h.75l1.04,3.2,1.05-3.2h.71l-1.42,3.82Z"/>
+      <path id="y" data-name="B" class="bo" d="m62.03,8.79c.23-.45.65-.74,1.18-.74.98,0,1.64.78,1.64,1.94s-.73,2.04-1.74,2.04c-.54,0-.98-.32-1.1-.73l-.04.65h-.59v-5.88h.66v2.72Zm0,1.42c0,.72.45,1.27,1.02,1.27.62,0,1.08-.56,1.08-1.46,0-.77-.37-1.41-1.06-1.41-.53,0-1.05.51-1.05,1.18v.42Z"/>
+      <path id="aa" data-name="D" class="bp" d="m58.42,11.95h-.59l-.05-.7c-.23.46-.65.78-1.2.78-.98,0-1.64-.78-1.64-1.94s.73-2.04,1.74-2.04c.52,0,.94.29,1.08.67v-2.65h.66v5.88Zm-.66-2.08c0-.72-.45-1.27-1.02-1.27-.62,0-1.08.56-1.08,1.46,0,.77.37,1.41,1.06,1.41.53,0,1.05-.51,1.05-1.18v-.42Z"/>
+      <path id="ac" data-name="E" class="bk" d="m54.07,11.76c-.29.16-.71.26-1.16.26-1.06,0-1.74-.64-1.74-1.89s.68-2.09,1.71-2.09,1.4.85,1.4,1.89c0,.12,0,.2-.03.33h-2.39c.04.86.44,1.24,1.21,1.24.33,0,.7-.11.97-.28l.03.54Zm-.45-2.04c0-.62-.22-1.12-.81-1.12-.53,0-.88.45-.94,1.12h1.74Z"/>
+      <path id="ae" data-name="R" class="bi" d="m49.52,8.7c.11-.37.43-.64.82-.64.14,0,.27.02.38.04l-.03.59c-.12-.03-.23-.05-.38-.05-.47,0-.78.42-.78,1.16v2.14h-.66v-3.82h.59l.04.58Z"/>
+      <path id="ag" data-name="E" class="bm" d="m47.76,11.76c-.29.16-.71.26-1.16.26-1.06,0-1.74-.64-1.74-1.89s.68-2.09,1.71-2.09,1.4.85,1.4,1.89c0,.12,0,.2-.03.33h-2.39c.04.86.44,1.24,1.21,1.24.33,0,.7-.11.97-.28l.03.54Zm-.45-2.04c0-.62-.22-1.12-.81-1.12-.53,0-.88.45-.94,1.12h1.74Z"/>
+      <path id="ai" data-name="W" class="bj" d="m42.68,11.95l-.37-1.42c-.13-.48-.25-.96-.35-1.58-.09.62-.21,1.1-.34,1.58l-.38,1.42h-.74l-1.12-3.82h.74l.46,1.76c.13.48.22.96.3,1.5.07-.54.18-1.02.31-1.5l.46-1.73h.67l.45,1.73c.13.48.23.96.3,1.5.07-.54.18-1.02.31-1.5l.46-1.76h.69l-1.12,3.82h-.74Z"/>
+      <path id="ak" data-name="O" class="bl" d="m39.02,10.04c0,1.19-.69,1.99-1.77,1.99s-1.78-.8-1.78-1.99.69-1.99,1.78-1.99,1.77.8,1.77,1.99Zm-2.83,0c0,.82.36,1.46,1.06,1.46s1.05-.64,1.05-1.46-.36-1.46-1.05-1.46-1.06.64-1.06,1.46Z"/>
+      <path id="am" data-name="P" class="bn" d="m32.02,6.49c.46-.09.85-.12,1.2-.12,1.32,0,2,.7,2,1.61,0,1.18-1.02,1.76-2.18,1.76-.13,0-.22,0-.36-.02v2.24h-.66v-5.46Zm.66,2.66c.12.02.29.02.38.02.82,0,1.45-.38,1.45-1.12,0-.67-.46-1.11-1.27-1.11-.18,0-.3,0-.56.04v2.17Z"/>
+    </g>
+  </g>
+  <g id="an" data-name="Nix Logo">
+    <g id="ao" data-name="Snowflake">
+      <path id="aq" data-name="path3336-6" class="bx" d="m14.79,15.75l5.63,9.75-2.59.02-1.5-2.62-1.51,2.61h-1.29s-.66-1.14-.66-1.14l2.16-3.71-1.53-2.66,1.29-2.25Z"/>
+      <g id="ar" data-name="use3439-6">
+        <path id="at" data-name="path3336-6" class="by" d="m16.82,11.73l-5.63,9.75-1.31-2.23,1.52-2.61h-3.01s-.64-1.12-.64-1.12l.66-1.14h4.29s1.54-2.64,1.54-2.64h2.6Z"/>
+      </g>
+      <g id="au" data-name="use3445-0">
+        <path id="aw" data-name="path3336-6" class="bv" d="m17.25,19.53h11.26s-1.27,2.25-1.27,2.25h-3.02s1.5,2.61,1.5,2.61l-.64,1.11h-1.31s-2.13-3.72-2.13-3.72h-3.07s-1.3-2.25-1.3-2.25Z"/>
+      </g>
+      <g id="ax" data-name="use3449-5">
+        <path id="az" data-name="path3336-6" class="bw" d="m23.81,15.25l-5.63-9.75,2.59-.02,1.5,2.62,1.51-2.61h1.29s.66,1.14.66,1.14l-2.16,3.71,1.53,2.66-1.29,2.25Z"/>
+      </g>
+      <path id="bb" data-name="path4260-0" class="bu" d="m14.79,15.75l5.63,9.75-2.59.02-1.5-2.62-1.51,2.61h-1.29s-.66-1.14-.66-1.14l2.16-3.71-1.53-2.66,1.29-2.25Z"/>
+      <g id="bc" data-name="use4354-5">
+        <path id="be" data-name="path4260-0" class="bs" d="m21.32,11.45h-11.26s1.27-2.25,1.27-2.25h3.02s-1.5-2.61-1.5-2.61l.64-1.11h1.31s2.13,3.72,2.13,3.72h3.07s1.3,2.25,1.3,2.25Z"/>
+      </g>
+      <g id="bf" data-name="use4362-2">
+        <path id="bh" data-name="path4260-0" class="bt" d="m21.76,19.27l5.63-9.75,1.31,2.23-1.52,2.61h3.01s.64,1.12.64,1.12l-.66,1.14h-4.29s-1.54,2.64-1.54,2.64h-2.6Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
