@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap')
+@import "css/highlight.css"
 
 @tailwind base
 @tailwind components
@@ -12,6 +13,12 @@ html
 h1
 	@apply text-2xl
 
+h2
+	@apply text-xl 
+
+h3
+	@apply text-lg
+
 p,li
 	@apply text-base
 
@@ -20,6 +27,17 @@ a
 
 button
 	@apply rounded-xl bg-yellow p-2 text-center
+
+blockquote
+	@apply bg-surface2 p-2 rounded-xl
+	p
+		@apply bg-surface2 text-text
+
+	code
+		@apply bg-surface2 text-text p-0
+
+code 
+	@apply bg-base text-text p-[0.1em]
 
 body
 	@apply bg-base p-10
@@ -46,7 +64,14 @@ footer
 	@apply mx-auto rounded p-3
 
 #blogpost
-	@apply w-full items-center
+	h1 
+		@apply bg-base text-4xl mx-auto p-2 mb-5 mt-5 text-text text-center
+	h2
+		@apply bg-base text-3xl mx-auto p-2 mb-5 mt-5 text-text text-center
+	h3
+		@apply bg-base text-2xl mx-auto p-2 mb-5 mt-5 text-text text-center
+
+	@apply lg:max-w-6xl text-left
 
 #commitText
 	@apply text-subtext1 p-2

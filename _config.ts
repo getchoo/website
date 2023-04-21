@@ -29,6 +29,11 @@ const site = lume({
 	location: new URL("https://getchoo.github.io"),
 });
 
+site.remoteFile(
+	"_includes/css/highlight.css",
+	"https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github-dark.min.css"
+);
+
 site.use(attributes())
 	.use(base_path())
 	.use(code_highlight())
