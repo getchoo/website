@@ -22,7 +22,9 @@ jobs:
           npm install -g prettier
 
       - name: format
-        run: prettier --editorconfig -w .
+        run: |
+          prettier --editorconfig -w --parser html ./**/*.njk
+          prettier --editorconfig -w .
 
       - name: add and commit
         uses: EndBug/add-and-commit@v9
