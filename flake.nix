@@ -2,52 +2,55 @@
   description = "getchoo's personal website";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.11";
-    nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs-stable.follows = "nixpkgs";
-      inputs.nixpkgs.follows = "nixpkgsUnstable";
-      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = {
     self,
-    nixpkgsUnstable,
-    flake-utils,
+    nixpkgs,
     pre-commit-hooks,
     ...
-  }:
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgsUnstable {inherit system;};
-    in {
-      checks = {
-        pre-commit-check = pre-commit-hooks.lib.${system}.run {
-          src = ./.;
-          hooks = {
-            alejandra.enable = true;
-            prettier.enable = true;
-            editorconfig-checker.enable = true;
-          };
-        };
-      };
+  }: let
+    systems = [
+      "x86_64-linux"
+      "aarch64-linux"
+      "x86_64-darwin"
+      "aarch64-darwin"
+    ];
 
-      devShells = let
-        inherit (pkgs) mkShell;
-        inherit (self.checks.${system}.pre-commit-check) shellHook;
-      in {
-        default = mkShell {
-          inherit shellHook;
-          packages = with pkgs; [
-            alejandra
-            deno
-            fzf
-            just
-            nodePackages.prettier
-          ];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+    nixpkgsFor = forAllSystems (system: import nixpkgs {inherit system;});
+  in {
+    checks = forAllSystems (system: {
+      pre-commit-check = pre-commit-hooks.lib.${system}.run {
+        src = ./.;
+        hooks = {
+          alejandra.enable = true;
+          prettier.enable = true;
+          editorconfig-checker.enable = true;
         };
       };
     });
+
+    devShells = forAllSystems (system: let
+      pkgs = nixpkgsFor.${system};
+      inherit (pkgs) mkShell;
+    in {
+      default = mkShell {
+        inherit (self.checks.${system}.pre-commit-check) shellHook;
+        packages = with pkgs; [
+          alejandra
+          deno
+          fzf
+          just
+          nodePackages.prettier
+        ];
+      };
+    });
+  };
 }
