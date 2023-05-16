@@ -17,13 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: setup deno
-        uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.31.3
+      - name: install Nix
+        uses: cachix/install-nix-action@v20
 
       - name: build site
-        run: deno task build
+        run: |
+          nix shell nixpkgs#{bash,nodejs,nodePackages.yarn} \
+            --command bash -c 'yarn install -D && yarn build'
 
       - name: setup pages
         uses: actions/configure-pages@v3
@@ -31,7 +31,7 @@ jobs:
       - name: upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "_site"
+          path: "dist"
 
       - name: deploy
         id: deployment

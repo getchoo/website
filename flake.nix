@@ -31,6 +31,7 @@
         src = ./.;
         hooks = {
           alejandra.enable = true;
+          eslint.enable = true;
           prettier.enable = true;
           editorconfig-checker.enable = true;
         };
@@ -40,17 +41,31 @@
     devShells = forAllSystems (system: let
       pkgs = nixpkgsFor.${system};
       inherit (pkgs) mkShell;
+      cache = pkgs.fetchYarnDeps {
+        yarnLock = ./yarn.lock;
+        sha256 = "sha256-yhhuIfXjJhSfA8lweJ/0iD1qhnS3Th7P4zT+8iiWB/8=";
+      };
     in {
       default = mkShell {
         inherit (self.checks.${system}.pre-commit-check) shellHook;
-        packages = with pkgs; [
+        packages = with pkgs;
+        with nodePackages; [
           alejandra
-          deno
-          fzf
+          cache
+          eslint
           just
-          nodePackages.prettier
+          nodejs
+          prettier
+          yarn
         ];
       };
+    });
+
+    packages = forAllSystems (s: let
+      pkgs = nixpkgsFor.${s};
+    in rec {
+      getchoo-website = pkgs.callPackage ./nix {};
+      default = getchoo-website;
     });
   };
 }

@@ -1,0 +1,29 @@
+---
+const links = {
+	home: "/",
+	blog: "/blog",
+	github: "https://github.com/getchoo",
+};
+---
+
+<nav>
+	<div
+		class="flex flex-column align-center justify-center mx-auto p-5"
+		<ul
+		class="inline"
+	>
+		{
+			Object.entries(links).map(([link, url]) => (
+				<li class="inline text-base p-2">
+					<a href={url}>{link}</a>
+				</li>
+			))
+		}
+	</div>
+</nav>
+
+<style>
+	a {
+		@apply rounded-xl bg-yellow p-2;
+	}
+</style>

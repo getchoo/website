@@ -1,0 +1,27 @@
+---
+import Index from "@layouts/Index.astro";
+import "@styles/global.sass";
+const title = "guzzle guzzle";
+const description = title;
+---
+
+<Index title={title} description={description}>
+	<script type="module" src="/js/chrisApp.js"></script>
+	<h1 class="bg-base w-fit h-fit mx-auto rounded p-5 text-text">
+		<b>getchoo's website 🚀</b>
+	</h1>
+
+	<br />
+
+	<p>this is under construction. i'm experimenting with astro</p>
+
+	<img
+		src="/imgs/gifs/obras.gif"
+		class="mx-auto"
+		loading="lazy"
+		decoding="async"
+		alt="construction"
+	/>
+
+	<a href="/lul">click here</a>
+</Index>

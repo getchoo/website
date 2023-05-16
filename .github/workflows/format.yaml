@@ -14,17 +14,12 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v3
 
-      - name: setup node
-        uses: actions/setup-node@v3
-
-      - name: install prettier
-        run: |
-          npm install -g prettier
+      - name: install Nix
+        uses: cachix/install-nix-action@v20
 
       - name: format
         run: |
-          prettier --editorconfig -w --parser html ./**/*.njk
-          prettier --editorconfig -w .
+          nix run nixpkgs#nodePackages.prettier -- --editorconfig -w .
 
       - name: add and commit
         uses: EndBug/add-and-commit@v9

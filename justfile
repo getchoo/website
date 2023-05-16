@@ -1,18 +1,18 @@
-alias s := serve
-alias d := deps
+alias b := build
 alias f := fmt
+alias uf := update-flake
 
-serve:
-	deno task serve
-
-deps:
-	deno cache --config deno.json --lock deno.lock _config.ts
+build:
+    yarn run build
 
 [macos]
 [windows]
 fmt:
-	prettier --editorconfig -w .
+    prettier --editorconfig -w .
 
 [linux]
 fmt:
-	prettier --editorconfig -w . && alejandra .
+    prettier --editorconfig -w . && alejandra .
+
+update-flake:
+    nix flake update

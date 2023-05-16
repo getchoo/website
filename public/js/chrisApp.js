@@ -1,3 +1,4 @@
+/* eslint no-undef: "off" */
 const chrisURL = "/imgs/chris/";
 
 function randomChris() {

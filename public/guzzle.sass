@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap')
-@import "css/highlight.css"
 
 @tailwind base
 @tailwind components
@@ -58,10 +57,11 @@ footer
 		// this is dumb
 		@apply mx-auto
 
-.headerbar
-	@apply flex flex-col
-	@apply items-center justify-center
-	@apply mx-auto rounded p-3
+nav
+	div
+		@apply flex flex-col items-center justify-center mx-auto rounded p-3 text-text
+	ul
+		@apply inline mx-auto rounded p-3
 
 #blogpost
 	h1 

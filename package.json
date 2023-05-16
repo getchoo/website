@@ -1,0 +1,28 @@
+{
+	"name": "getchoo-website",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "prettier --write --editorconfig ."
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@astrojs/tailwind": "^3.1.2",
+		"@catppuccin/tailwindcss": "^0.1.1",
+		"astro": "^2.4.5",
+		"autoprefixer": "^10.4.14",
+		"eslint": "^8.40.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"postcss": "^8.4.23",
+		"prettier": "^2.8.8",
+		"prettier-plugin-astro": "^0.8.1",
+		"sass": "^1.62.1",
+		"tailwind": "^4.0.0"
+	}
+}
