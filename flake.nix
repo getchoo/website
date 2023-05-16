@@ -25,6 +25,10 @@
 
     forAllSystems = nixpkgs.lib.genAttrs systems;
     nixpkgsFor = forAllSystems (system: import nixpkgs {inherit system;});
+
+    packageFn = pkgs: {
+      getchoo-website = pkgs.callPackage ./nix {};
+    };
   in {
     checks = forAllSystems (system: {
       pre-commit-check = pre-commit-hooks.lib.${system}.run {
@@ -61,11 +65,16 @@
       };
     });
 
+    nixosModules.default = import ./nix/module.nix;
+
     packages = forAllSystems (s: let
       pkgs = nixpkgsFor.${s};
-    in rec {
-      getchoo-website = pkgs.callPackage ./nix {};
-      default = getchoo-website;
+      p = packageFn pkgs;
+    in {
+      inherit (p) getchoo-website;
+      default = p.getchoo-website;
     });
+
+    overlays.default = _: packageFn;
   };
 }

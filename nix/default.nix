@@ -1,6 +1,6 @@
 {mkYarnPackage, ...}:
 mkYarnPackage rec {
-  name = "getchoo-website";
+  pname = "getchoo-website";
 
   src = builtins.path {
     path = ../.;
