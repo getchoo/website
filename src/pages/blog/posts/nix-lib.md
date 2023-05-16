@@ -7,12 +7,15 @@ description: an explanation of my journey through making a modular nix flake con
 # making an intuitive, modular nix flake configuration
 
 <div id="blogText">
+
 as some of my friends may know, recently i've gone off the nixos "deep end" so to speak, moving almost all of my systems and projects to it. i have a lot of reasons for this, but i think all of them might be better told in a different post. for this one, i'm going to go over my approach to making nix flake configurations that scale across multiple systems and users
+
 </div>
 
 ## first things first
 
 <div id="blogText">
+
 i started out with [nixos on wsl](https://github.com/nix-community/NixOS-WSL) (heresy i know), mainly because i was on my windows partition when i first thought about it, but also because i wasn't really sure if i liked it yet. similar to a lot of nix beginners, i quickly got a bit overwhelmed by options.
 
 <br />
@@ -24,6 +27,7 @@ i kept hearing about custom modules, overlays, and this thing called a "flake." 
 ## dipping my toe in
 
 <div id="blogText">
+
 at the time, in order to use native systemd support i needed to follow the `main` branch of nixos-wsl. since i had been interested in flakes, with some friends using them and the name itself being cool, i decided this might be a good time to learn how to use them!
 
 <br />
@@ -43,6 +47,7 @@ now another issue: i wasn't really sure how modules worked here. some ideas went
 ## enter: pain
 
 <div id="blogText">
+
 i felt pretty good now. throughout this, i had been moving a lot of the configs for programs to nix -- which was a much better time than gluing things together -- and started considering it as a replacement to my bare git repo of traditional dotfiles. i had also heard of something called home-manager, and with [great instructions](https://nix-community.github.io/home-manager/index.html#sec-flakes-nixos-module) and not a lot of effort, i was able to get that setup and move even more configurations to nix.
 
 <br />
