@@ -27,7 +27,7 @@
     nixpkgsFor = forAllSystems (system: import nixpkgs {inherit system;});
 
     packageFn = pkgs: {
-      getchoo-website = pkgs.callPackage ./nix {};
+      getchoo-website = pkgs.callPackage ./nix {inherit self;};
     };
   in {
     checks = forAllSystems (system: {
