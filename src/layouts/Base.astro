@@ -1,13 +1,9 @@
 ---
 import Head from "@components/Head.astro";
+import Footer from "@components/Footer.astro";
 import Nav from "@components/Nav.astro";
-// import Footer from "@components/Footer.astro";
-import { execa } from "execa";
-import "@styles/global.sass";
 
 const { title, description } = Astro.props;
-
-const { stdout: gitCommit } = await execa("git", ["rev-parse", "HEAD"]);
 ---
 
 <!DOCTYPE html>
@@ -17,9 +13,6 @@ const { stdout: gitCommit } = await execa("git", ["rev-parse", "HEAD"]);
 	<body class="bg-base">
 		<Nav />
 		<slot />
-		<!-- <Footer /> -->
-		<div class="flex flex-col items-center mt-12">
-			<p class="text-text text-xs">{gitCommit}</p>
-		</div>
+		<Footer />
 	</body>
 </html>
