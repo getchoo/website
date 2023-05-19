@@ -3,6 +3,7 @@ import attributes from "lume/plugins/attributes.ts";
 import base_path from "lume/plugins/base_path.ts";
 import code_highlight from "lume/plugins/code_highlight.ts";
 import date from "lume/plugins/date.ts";
+import jsx from "lume/plugins/jsx.ts";
 import remark from "lume/plugins/remark.ts";
 import postcss from "lume/plugins/postcss.ts";
 import sass from "lume/plugins/sass.ts";
@@ -38,6 +39,7 @@ site.use(attributes())
 	.use(base_path())
 	.use(code_highlight())
 	.use(date())
+	.use(jsx())
 	.use(remark())
 	.use(sitemap())
 	.use(sass())
@@ -55,19 +57,17 @@ site.use(attributes())
 	.use(postcss())
 	.data("gitRevision", await getGitRevision())
 	.ignore(
-		"README.md",
-		"LICENSE",
-		".gitignore",
-		".gitattributes",
-		"flake.nix",
-		"flake.lock",
+		".github",
 		".editorconfig",
+		".envrc",
+		".gitignore",
 		".prettierignore",
-		".envrc"
+		"flake.lock",
+		"flake.nix",
+		"justfile",
+		"LICENSE",
+		"README.md"
 	)
-	.copy("favicon.ico")
-	.copy("files")
-	.copy("imgs")
-	.copy("js");
+	.copy("public", "/");
 
 export default site;

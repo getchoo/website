@@ -5,6 +5,13 @@
 		"serve": "deno task lume -s"
 	},
 	"imports": {
-		"lume/": "https://deno.land/x/lume@v1.15.3/"
+		"lume/": "https://deno.land/x/lume@v1.17.3/",
+		"@components/": "./src/_includes/components/",
+		"@layouts/": "./src/_includes/layouts/",
+		"@utils/": "./src/_utils/"
+	},
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "npm:preact"
 	}
 }

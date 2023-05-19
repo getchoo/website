@@ -1,2 +1,2 @@
 type: posts
-layout: layouts/page.njk
+layout: layouts/Page.tsx
