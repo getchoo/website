@@ -21,4 +21,4 @@ function randomChris() {
 }
 
 const chris = document.getElementById("chris_gif");
-chris.addEventListener("click", randomChris);
+chris ? chris.addEventListener("click", randomChris) : {};

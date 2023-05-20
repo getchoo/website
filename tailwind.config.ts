@@ -1,5 +1,10 @@
+/** @type {module} */
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+
+import type { Config } from "tailwindcss";
+import tailwind from "@catppuccin/tailwindcss";
+
+export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
 		fontFamily: {
@@ -10,8 +15,8 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [
-		require("@catppuccin/tailwindcss")({
+		tailwind({
 			defaultFlavour: "mocha",
 		}),
 	],
-};
+} satisfies Config;
