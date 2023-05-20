@@ -1,3 +1,2 @@
 .direnv/
 .pre-commit-config.yaml
-src/styles/global.scss
