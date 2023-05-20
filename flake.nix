@@ -55,6 +55,6 @@
       };
     });
 
-    formatter = forAllSystems (s: nixpkgs.${s}.alejandra);
+    formatter = forAllSystems (s: nixpkgsFor.${s}.alejandra);
   };
 }
