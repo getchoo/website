@@ -1,10 +1,9 @@
 name: format
 
 on:
-  pull_request:
-    branches: [main]
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   format:
@@ -24,7 +23,7 @@ jobs:
 
       - name: format
         run: |
-          nix develop --command bash -c "yarn format"
+          nix develop --command bash -c "pnpm format"
 
       - name: add and commit
         uses: EndBug/add-and-commit@v9
