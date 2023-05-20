@@ -1,0 +1,39 @@
+{
+	"image": "ghcr.io/cachix/devenv:latest",
+	"waitFor": "onCreateCommand",
+
+	"updateContentCommand": "pnpm install",
+	"postCreateCommand": "",
+	"postAttachCommand": {
+		"serve": "pnpm dev"
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode",
+				"mkhl.direnv",
+				"editorconfig.editorconfig",
+				"dbaeumer.vscode-eslint",
+				"github.vscode-github-actions",
+				"me-dutour-mathieu.vscode-github-actions",
+				"ecmel.vscode-html-css",
+				"ms-vscode.vscode-typescript-next",
+				"bierner.lit-html",
+				"esbenp.prettier-vscode",
+				"rvest.vs-code-prettier-eslint",
+				"syler.sass-indented",
+				"bradlc.vscode-tailwindcss"
+			]
+		}
+	},
+
+	"portsAttributes": {
+		"3000": {
+			"label": "website",
+			"onAutoForward": "openPreview"
+		}
+	},
+
+	"forwardPorts": [3000]
+}
