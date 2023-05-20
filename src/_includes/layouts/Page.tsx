@@ -1,4 +1,4 @@
-import { PageData } from "https://deno.land/x/lume@v1.15.3/core.ts";
+import { PageData } from "lume/core.ts";
 
 export const layout = "layouts/Base.tsx";
 const html = String.raw;

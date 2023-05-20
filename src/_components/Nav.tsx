@@ -1,12 +1,16 @@
 interface Links {
 	home: string;
 	blog: string;
+	forgejo: string;
+	grafana: string;
 	github: string;
 }
 
 const links: Links = {
 	home: "/",
 	blog: "/blog",
+	forgejo: "https://git.mydadleft.me/",
+	grafana: "https://grafana.mydadleft.me/",
 	github: "https://github.com/getchoo",
 };
 
