@@ -1,5 +1,12 @@
 {
-	"image": "ghcr.io/cachix/devenv:latest",
+	"name": "website",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "18-bullseye",
+			"NODE_VERSION": "18.16.0"
+		}
+	},
 	"waitFor": "onCreateCommand",
 
 	"updateContentCommand": "pnpm install",
@@ -12,7 +19,6 @@
 		"vscode": {
 			"extensions": [
 				"astro-build.astro-vscode",
-				"mkhl.direnv",
 				"editorconfig.editorconfig",
 				"dbaeumer.vscode-eslint",
 				"github.vscode-github-actions",
@@ -35,5 +41,7 @@
 		}
 	},
 
-	"forwardPorts": [3000]
+	"forwardPorts": [3000],
+
+	"remoteUser": "node"
 }
