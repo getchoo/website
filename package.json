@@ -10,9 +10,9 @@
 		"astro": "astro",
 		"format": "prettier --write --editorconfig ."
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"@astrojs/tailwind": "^3.1.2",
+		"@astrojs/ts-plugin": "^1.0.6",
 		"@catppuccin/tailwindcss": "^0.1.1",
 		"astro": "^2.4.5",
 		"autoprefixer": "^10.4.14",
@@ -25,5 +25,31 @@
 		"prettier-plugin-astro": "^0.8.1",
 		"sass": "^1.62.1",
 		"tailwindcss": "^3.3.2"
+	},
+	"eslintConfig": {
+		"extends": [
+			"eslint:recommended",
+			"plugin:prettier/recommended"
+		],
+		"env": {
+			"es6": true,
+			"node": true
+		},
+		"rules": {
+			"prettier/prettier": "error"
+		},
+		"parserOptions": {
+			"sourceType": "module"
+		},
+		"plugins": [
+			"prettier"
+		]
+	},
+	"postcss": {
+		"plugins": {
+			"postcss-import": {},
+			"tailwindcss": {},
+			"autoprefixer": {}
+		}
 	}
 }
