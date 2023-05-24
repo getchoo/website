@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   format:
     runs-on: ubuntu-latest
@@ -23,7 +26,7 @@ jobs:
 
       - name: format
         run: |
-          nix develop --command bash -c "pnpm format"
+          nix develop --command bash -c "pnpm install && pnpm format"
 
       - name: add and commit
         uses: EndBug/add-and-commit@v9
