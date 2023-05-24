@@ -1,5 +1,6 @@
 ---
 import Base from "@layouts/Base.astro";
+import { Image } from "@astrojs/image/components";
 const { title, description } = Astro.props;
 ---
 
@@ -18,18 +19,22 @@ const { title, description } = Astro.props;
 			class="bg-base hidden min-[1280px]:flex flex-col gap-2 text-center items-center justify-center m-20 mt-0 mb-5 p-5 rounded-lg drop-shadow-2xl"
 		>
 			<div id="gif">
-				<img
+				<Image
 					src="/imgs/gifs/legalize.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="legalize now!"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/acab.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="acab"
@@ -40,161 +45,198 @@ const { title, description } = Astro.props;
 						To view the source visit: https://github.com/sakecode/Sake-s-SVGs 
 						To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
 					-->
-					<img
+					<Image
 						src="/imgs/gifs/poweredbynix.svg"
-						width="88"
-						height="31"
-						loading="lazy"
+						width={88}
+						height={31}
+						format="svg"
+						quality={90}
 						decoding="async"
 						alt="powered by fedora"
 					/>
 				</a>
-				<img
+				<Image
 					src="/imgs/gifs/capitalism.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="let's crush capitalism!"
 				/>
 			</div>
 			<div id="gif">
-				<img
+				<Image
 					src="/imgs/gifs/anybrowser.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="best viewed with any browser"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/weezer.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="weezer fan"
 				/>
 				<a href="https://dnsense.pub/">
-					<img
+					<Image
 						src="/imgs/gifs/steam.gif"
-						width="88"
-						height="31"
+						width={88}
+						height={31}
+						format="webp"
+						quality={90}
 						loading="lazy"
 						decoding="async"
 						alt="play with steam"
 					/>
 				</a>
-				<img
+				<Image
 					src="/imgs/gifs/vi.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="made with vi"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/pride.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="pride"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/imagine.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="imagination"
 				/>
 			</div>
 			<div id="gif">
-				<img
+				<Image
 					src="/imgs/gifs/moz.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="mozilla is cool"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/free.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="completely free software"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/gimp.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="graphics by gimp"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/explorer.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="marijuana mind explorer"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/jsfree.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="javascript free"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/web3.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="keep the web free! say no to web3!"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/tired.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="tired"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/arnold.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="hey arnold!"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/bob.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="powered by bob"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/counterstrike.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="counter-strike player"
 				/>
-				<img
+				<Image
 					src="/imgs/gifs/chris.gif"
-					width="88"
-					height="31"
+					width={88}
+					height={31}
+					format="webp"
+					quality={90}
 					loading="lazy"
 					decoding="async"
 					alt="chris troll"

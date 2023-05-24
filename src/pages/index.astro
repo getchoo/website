@@ -1,6 +1,6 @@
 ---
 import Index from "@layouts/Index.astro";
-import "@styles/global.sass";
+import { Image } from "@astrojs/image/components";
 const title = "guzzle guzzle";
 const description = title;
 ---
@@ -15,13 +15,17 @@ const description = title;
 
 	<p>this is under construction. i'm experimenting with astro</p>
 
-	<img
+	<Image
 		src="/imgs/gifs/obras.gif"
+		width={106}
+		height={119}
 		class="mx-auto"
+		format="webp"
+		quality={90}
 		loading="lazy"
 		decoding="async"
 		alt="construction"
 	/>
 
-	<a href="/lul">click here</a>
+	<a href="/lul">hehe funny click me</a>
 </Index>
