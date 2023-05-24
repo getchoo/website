@@ -1,40 +1,37 @@
 ---
 interface Links {
-	home: string,
-	blog: string,
-	forgejo: string,
-	grafana: string,
-	github: string,
-};
+	home: string;
+	blog: string;
+	forgejo: string;
+	grafana: string;
+	github: string;
+	hydra: string;
+	miniflux: string;
+}
 
 const links: Links = {
 	home: "/",
 	blog: "/blog",
 	forgejo: "https://git.mydadleft.me",
 	grafana: "https://grafana.mydadleft.me",
+	hydra: "https://hydra.mydadleft.me",
 	miniflux: "https://miniflux.mydadleft.me",
 	github: "https://github.com/getchoo",
 };
 ---
 
 <nav>
-	<div
-		class="flex flex-column align-center justify-center mx-auto p-5"
-		<ul
-		class="inline"
-	>
-		{
-			Object.entries(links).map(([link, url]) => (
-				<li class="inline text-base p-2">
-					<a href={url}>{link}</a>
-				</li>
-			))
-		}
+	<div class="flex flex-column justify-center mx-auto p-5">
+		<ul class="inline">
+			{
+				Object.entries(links).map(([link, url]) => (
+					<li class="inline text-base p-2">
+						<a class="rounded-xl bg-yellow p-2" href={url}>
+							{link}
+						</a>
+					</li>
+				))
+			}
+		</ul>
 	</div>
 </nav>
-
-<style>
-	a {
-		@apply rounded-xl bg-yellow p-2;
-	}
-</style>
