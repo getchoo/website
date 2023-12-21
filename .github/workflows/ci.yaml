@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: nekowinston/setup-deno@v1
+
+      - name: Run build
+        run: |
+          deno task build
+
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: nekowinston/setup-deno@v1
+
+      - name: Run format
+        run: |
+          deno fmt --check 
+
+  lint:
+    name: Lint 
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: nekowinston/setup-deno@v1
+
+      - name: Run lint
+        run: |
+          deno lint --compact || true
+          deno lint

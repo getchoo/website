@@ -1,0 +1,13 @@
+<nav>
+	<div class="flex flex-column justify-center mx-auto p-7">
+		<ul class="inline">
+			{{ for item of links }}
+				<li class="inline text-base p-2">
+					<a class="rounded-xl bg-yellow p-2" href={{ item.url }}>
+						{{ item.name }}
+					</a>
+				</li>
+			{{ /for }}
+		</ul>
+	</div>
+</nav>
