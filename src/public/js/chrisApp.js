@@ -1,4 +1,3 @@
-/* eslint no-undef: "off" */
 const chrisURL = "/imgs/chris/";
 
 function randomChris() {
@@ -20,5 +19,12 @@ function randomChris() {
 	window.location.href = url;
 }
 
-const chris = document.getElementById("chris_gif");
-chris ? chris.addEventListener("click", randomChris) : {};
+function findChris() {
+	const chris = document.getElementById("chris_gif");
+	chris
+		? chris.addEventListener("click", randomChris)
+		: console.warn("Couldn't load chris app!");
+}
+
+// avoiding a race condition here
+setTimeout(findChris, 1000);
