@@ -105,7 +105,7 @@
       self',
       ...
     }: {
-      default = pkgs.mkShell {
+      default = pkgs.mkShellNoCC {
         packages = with pkgs; [
           deno
           actionlint
