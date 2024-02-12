@@ -2,6 +2,7 @@ import lume from "lume/mod.ts";
 import attributes from "lume/plugins/attributes.ts";
 import base_path from "lume/plugins/base_path.ts";
 import code_highlight from "lume/plugins/code_highlight.ts";
+import cssnano from "cssnano";
 import date from "lume/plugins/date.ts";
 import postcss from "lume/plugins/postcss.ts";
 import sass from "lume/plugins/sass.ts";
@@ -57,7 +58,9 @@ site.use(attributes())
 			],
 		},
 	}))
-	.use(postcss());
+	.use(postcss({
+		plugins: [cssnano()]
+	}));
 
 site.copy("public", ".");
 site.data("gitCommit", await getGitRevision());
