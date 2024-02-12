@@ -59,7 +59,7 @@ site.use(attributes())
 		},
 	}))
 	.use(postcss({
-		plugins: [cssnano()]
+		plugins: [cssnano()],
 	}));
 
 site.copy("public", ".");
