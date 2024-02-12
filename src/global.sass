@@ -5,50 +5,9 @@
 @tailwind utilities
 @tailwind variants
 
-html
-	font-family: "Noto Sans", sans-serif
+a
+	text-decoration: underline
+	@apply text-blue
 
 h1
-	@apply text-base text-2xl
-
-h2
-	@apply text-base text-xl
-
-h3
-	@apply text-base text-lg
-
-p,li
-	@apply text-base
-
-	code
-		@apply bg-base text-text p-[0.2em] text-sm rounded
-
-	a
-		@apply underline decoration-inherit
-
-a
-	@apply underline decoration-inherit
-
-body
-	@apply bg-base p-10
-
-.container
-	@apply bg-lavender flex flex-auto flex-col items-center justify-center w-fit mx-auto rounded-lg
-
-.content
-	@apply inline-block text-center p-5
-
-#blogpost
-	h1
-		@apply bg-base text-4xl mx-auto p-5 mb-5 mt-5 text-text text-center w-fit
-
-	h2
-		@apply bg-base text-xl mx-auto p-3 mb-5 mt-5 text-text text-center w-fit
-
-	h3
-		@apply bg-base text-lg mx-auto p-1 mb-5 mt-5 text-text text-center w-fit
-
-	@apply lg:max-w-6xl text-left items-center
-
-#gif
-	@apply flex gap-2
+	@apply text-3xl md:text-4xl

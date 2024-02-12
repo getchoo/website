@@ -1,9 +1,23 @@
 ---
-layout: base.vto
+links:
+  - name: home
+    url: "/"
+  - name: miniflux
+    url: "https://miniflux.mydadleft.me"
+  - name: github
+    url: "https://github.com/getchoo"
 ---
 
-<div class="container">
-	<div class="content" id="blogpost">
-		{{ content }}
-	</div>
-</div>
+
+<!DOCTYPE HTML>
+<html lang="en">
+{{ comp.head({ title, description }) }}
+<body class="bg-base text-text p-5 lg:p-0 text-md md:text-lg antialiased max-w-screen-md mx-auto my-10">
+	<h1>
+		<b>getchoo's website 🦕</b>
+	</h1>
+	{{ comp.nav({ links }) }}
+	{{ content }}
+	{{ comp.footer() }}
+</body>
+</html>
