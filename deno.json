@@ -5,7 +5,7 @@
 		"serve": "deno task lume -s"
 	},
 	"imports": {
-		"lume/": "https://deno.land/x/lume@v2.0.1/",
+		"lume/": "https://deno.land/x/lume@v2.0.3/",
 		"catppuccin": "npm:@catppuccin/tailwindcss@0.1.6"
 	},
 	"compilerOptions": {
