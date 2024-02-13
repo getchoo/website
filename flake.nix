@@ -1,150 +1,78 @@
 {
-  description = "getchoo's website";
+  description = "seth's website";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
-    nix-deno = {
-      url = "github:nekowinston/nix-deno";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    pre-commit = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-stable.follows = "nixpkgs";
+        flake-compat.follows = "";
+      };
     };
   };
 
-  outputs = {
-    nixpkgs,
-    nix-deno,
-    self,
-    ...
-  }: let
-    systems = [
-      "x86_64-linux"
-      "aarch64-linux"
-      "x86_64-darwin"
-      "aarch64-darwin"
-    ];
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = with inputs; [ treefmt-nix.flakeModule pre-commit.flakeModule ];
 
-    forSystem = system: fn:
-      fn rec {
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [nix-deno.overlays.default];
+      systems =
+        [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+
+      perSystem = { lib, pkgs, config, self', ... }:
+        let
+          nodejs-slim = pkgs.nodejs-slim_20; # this should be the current lts
+
+          enableAll = lib.flip lib.genAttrs (lib.const { enable = true; });
+        in {
+          treefmt = {
+            projectRootFile = ".git/config";
+
+            programs = enableAll [ "deadnix" "nixfmt" "prettier" ];
+
+            settings.global = {
+              excludes = [ "./node_modules/*" "flake.lock" "pnpm-lock.yaml" ];
+            };
+          };
+
+          pre-commit = {
+            settings.hooks = enableAll [
+              "actionlint"
+              "eclint"
+              "eslint"
+              "markdownlint"
+              "nil"
+              "statix"
+              "treefmt"
+            ];
+          };
+
+          devShells.default = pkgs.mkShellNoCC {
+            shellHook = config.pre-commit.installationScript;
+            packages = [
+              self'.formatter
+              nodejs-slim
+              # use pnpm from package.json
+              (pkgs.runCommand "corepack-enable" {
+                nativeBuildInputs = [ nodejs-slim ];
+              } ''
+                mkdir -p $out/bin
+                corepack enable --install-directory $out/bin
+              '')
+            ];
+          };
         };
-
-        inherit (pkgs) lib;
-        self' = lib.mapAttrs (_: v: v.${system} or {}) self;
-      };
-
-    forAllSystems = fn: nixpkgs.lib.genAttrs systems (system: forSystem system fn);
-  in {
-    checks = forAllSystems ({
-      lib,
-      pkgs,
-      self',
-      ...
-    }: {
-      check-nil =
-        pkgs.runCommand "check-nil" {
-          nativeBuildInputs = with pkgs; [fd nil];
-        } ''
-          cd ${./.}
-          fd . -e "nix" | while read -r file; do
-            nil diagnostics "$file" || exit 1
-          done
-
-          touch $out
-        '';
-
-      "check-${self'.formatter.pname}" = pkgs.runCommand "check-${self'.formatter.pname}" {} ''
-        ${lib.getExe self'.formatter} --check ${./.}
-
-        touch $out
-      '';
-
-      check-statix =
-        pkgs.runCommand "check-statix" {
-          nativeBuildInputs = [pkgs.statix];
-        } ''
-          statix check ${./.}
-
-          touch $out
-        '';
-
-      check-actionlint =
-        pkgs.runCommand "check-actionlint" {
-          nativeBuildInputs = [pkgs.actionlint];
-        } ''
-          actionlint ${./.github/workflows}/**
-
-          touch $out
-        '';
-
-      check-denofmt =
-        pkgs.runCommand "check-denofmt" {
-          nativeBuildInputs = [pkgs.deno];
-        } ''
-          cd ${./.}
-          export DENO_DIR="$(mktemp -d)"
-          deno fmt --check
-
-          touch $out
-        '';
-
-      check-denolint =
-        pkgs.runCommand "check-denolint" {
-          nativeBuildInputs = [pkgs.deno];
-        } ''
-          cd ${./.}
-          export DENO_DIR="$(mktemp -d)"
-          deno lint
-
-          touch $out
-        '';
-    });
-
-    devShells = forAllSystems ({
-      pkgs,
-      self',
-      ...
-    }: {
-      default = pkgs.mkShellNoCC {
-        packages = with pkgs; [
-          deno
-          actionlint
-
-          self'.formatter
-          nil
-          statix
-        ];
-      };
-    });
-
-    formatter = forAllSystems ({pkgs, ...}: pkgs.alejandra);
-
-    packages = forAllSystems ({
-      lib,
-      pkgs,
-      self',
-      ...
-    }: {
-      website = pkgs.denoPlatform.mkDenoDerivation {
-        name = "website";
-        stdenv = pkgs.stdenvNoCC;
-
-        src = lib.cleanSource ./.;
-
-        buildPhase = ''
-          runHook preBuild
-
-          deno task build
-
-          runHook postBuild
-        '';
-
-        installPhase = ''
-          cp -r _site $out
-        '';
-      };
-
-      default = self'.packages.website;
-    });
-  };
+    };
 }

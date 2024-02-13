@@ -23,14 +23,3 @@ jobs:
       - name: Update lockfile & make PR
         uses: DeterminateSystems/update-flake-lock@v20
         id: update
-        with:
-          commit-msg: "flake: update inputs"
-          pr-title: "flake: update inputs"
-          token: ${{ github.token }}
-
-      - name: Enable auto-merge
-        shell: bash
-        run: gh pr merge --rebase "$PR_ID"
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_ID: ${{ steps.update.outputs.pull-request-number }}
