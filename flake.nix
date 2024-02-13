@@ -43,12 +43,20 @@
             programs = enableAll [ "deadnix" "nixfmt" "prettier" ];
 
             settings.global = {
-              excludes = [ "./node_modules/*" "flake.lock" "pnpm-lock.yaml" ];
+              excludes = [
+                "./node_modules/*"
+                "./dist/*"
+                "./.astro/*"
+                "flake.lock"
+                "pnpm-lock.yaml"
+              ];
             };
           };
 
-          pre-commit = {
-            settings.hooks = enableAll [
+          pre-commit.settings = {
+            settings.treefmt.package = config.treefmt.build.wrapper;
+
+            hooks = enableAll [
               "actionlint"
               "eclint"
               "eslint"
