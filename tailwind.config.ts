@@ -13,7 +13,7 @@ export default {
 	},
 	plugins: [
 		require("@catppuccin/tailwindcss")({
-			defaultFlavour: "mocha",
+			/* eslint-disable-line */ defaultFlavour: "mocha",
 		}),
 	],
 } satisfies Config;

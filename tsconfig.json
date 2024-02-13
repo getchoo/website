@@ -10,5 +10,6 @@
 			"@root/*": ["*"],
 			"@styles/*": ["src/styles/*"],
 		},
+		"allowJs": false,
 	},
 }
