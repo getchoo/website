@@ -1,0 +1,18 @@
+---
+layout: ../layouts/Page.astro
+title: 404
+description: Page not found!
+---
+
+import Picture from "astro/components/Picture.astro";
+import tapwater from "@assets/imgs/tapwater.png";
+
+<div class="space-y-5">
+	# 404! :(
+	<Picture
+		src={tapwater}
+		formats={["avif", "webp"]}
+		alt="Can i get you some tapwater?"
+		class="p-5"
+	/>
+</div>

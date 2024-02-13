@@ -6,46 +6,52 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  NODE_VERSION: 20
+
 jobs:
-  build:
-    name: Build
+  ci:
+    strategy:
+      matrix:
+        include:
+          - name: Build
+            command: build
+          - name: Lint
+            command: lint
+
+    name: ${{ matrix.name }}
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Deno
-        uses: nekowinston/setup-deno@v1
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
 
-      - name: Run build
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+
+      - name: Get pnpm store directory
+        id: store-path
         run: |
-          deno task build
+          echo "STORE_PATH=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
 
-  format:
-    name: Format
-    runs-on: ubuntu-latest
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        env:
+          STORE_PATH: ${{ steps.store-path.outputs.STORE_PATH }}
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Deno
-        uses: nekowinston/setup-deno@v1
-
-      - name: Run format
+      - name: Install dependencies
         run: |
-          deno fmt --check 
+          pnpm install --frozen-lockfile
 
-  lint:
-    name: Lint 
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Deno
-        uses: nekowinston/setup-deno@v1
-
-      - name: Run lint
+      - name: Run ${{ matrix.command }}
         run: |
-          deno lint --compact || true
-          deno lint
+          pnpm run ${{ matrix.command }}

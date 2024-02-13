@@ -1,0 +1,28 @@
+---
+import config from "@root/astro.config.ts";
+
+interface NavLink {
+	name: string;
+	url: string;
+}
+
+const links: NavLink[] = [
+	{ name: "home", url: "/" },
+	{
+		name: "miniflux",
+		url: `https://miniflux.${Astro.url.hostname || config.site}`,
+	},
+	{
+		name: "github",
+		url: "https://github.com/getchoo",
+	},
+];
+---
+
+<nav class="space-y-5 text-xl my-5">
+	<p>
+		{links.map(({ name, url }) => <a href={url}>{name}</a>)}
+	</p>
+
+	<hr />
+</nav>

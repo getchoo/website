@@ -1,3 +1,3 @@
 # website
 
-my personal website - made with [lume](https://lume.land/)
+my personal website - made with [astro](https://astro.build/)
