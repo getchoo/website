@@ -11,4 +11,5 @@ updates:
       directory: "/"
       schedule:
           interval: "weekly"
-      commit-message: "deps(node)"
+      commit-message:
+          prefix: "deps(node)"
