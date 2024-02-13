@@ -6,11 +6,13 @@ interface NavLink {
 	url: string;
 }
 
+const minifluxUrl = process.env.MINIFLUX_URL || `https://miniflux.${Astro.url.hostname || config.site}`;
+
 const links: NavLink[] = [
 	{ name: "home", url: "/" },
 	{
 		name: "miniflux",
-		url: `https://miniflux.${Astro.url.hostname || config.site}`,
+		url: minifluxUrl,
 	},
 	{
 		name: "github",
