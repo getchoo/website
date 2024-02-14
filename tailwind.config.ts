@@ -12,8 +12,9 @@ export default {
 		extend: {},
 	},
 	plugins: [
+		// eslint-disable-next-line
 		require("@catppuccin/tailwindcss")({
-			/* eslint-disable-line */ defaultFlavour: "mocha",
+			defaultFlavour: "mocha",
 		}),
 	],
 } satisfies Config;
