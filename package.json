@@ -24,7 +24,7 @@
 		"@fontsource-variable/noto-sans": "^5.0.1",
 		"@fontsource/noto-sans-mono": "^5.0.18",
 		"@types/node": "^20.11.20",
-		"@typescript-eslint/parser": "^7.0.1",
+		"@typescript-eslint/parser": "^7.0.2",
 		"astro": "^4.4.0",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
