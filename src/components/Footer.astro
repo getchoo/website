@@ -12,9 +12,9 @@ const { stdout: gitCommit } = await execa("git", ["rev-parse", "HEAD"]);
 			gifs.map(({ gif, alt }) => {
 				const img = <Picture src={gif} alt={alt} formats={["gif"]} />;
 
-				if (gif.src.includes("steam.gif")) {
+				if (gif.src.includes("steam")) {
 					return <a href="https://dnsense.pub/">{img}</a>;
-				} else if (gif.src.includes("poweredbynix.svg")) {
+				} else if (gif.src.includes("poweredbynix")) {
 					return <a href="https://github.com/sakecode">{img}</a>;
 				} else {
 					return img;

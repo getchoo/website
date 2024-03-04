@@ -8,8 +8,8 @@
 			"@layouts/*": ["src/layouts/*"],
 			"@pages/*": ["src/pages/*"],
 			"@root/*": ["*"],
-			"@styles/*": ["src/styles/*"],
+			"@styles/*": ["src/styles/*"]
 		},
-		"allowJs": false,
-	},
+		"allowJs": false
+	}
 }
