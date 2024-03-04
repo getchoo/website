@@ -24,8 +24,8 @@ devDependencies:
     specifier: ^5.0.2
     version: 5.0.2
   '@fontsource/noto-sans-mono':
-    specifier: ^5.0.18
-    version: 5.0.18
+    specifier: ^5.0.19
+    version: 5.0.19
   '@types/node':
     specifier: ^20.11.24
     version: 20.11.24
@@ -745,8 +745,8 @@ packages:
     resolution: {integrity: sha512-oXPNolW8ubNxul0L9j7M/VqVfrK3pJ9y33cWQ/RisKTLprhFZR+JAng0zpsJQv9ew/O83frhicrLFw5hq+HeQQ==}
     dev: true
 
-  /@fontsource/noto-sans-mono@5.0.18:
-    resolution: {integrity: sha512-xuvp10aWKbqfBoZ0rHh/RgsY5FhA7TVDTBgVjja35WDVdispOgZ2n0nZKgCGnfJJsnPgaayIGha67sJTy/kEFQ==}
+  /@fontsource/noto-sans-mono@5.0.19:
+    resolution: {integrity: sha512-CdhNptlXRFWsCp9o5z620g5CbH+lCuhRm6DSkmahQvz2ykSJDju+dr59MjxFuLFxFiYGlyN6KS5Nea36CRY05A==}
     dev: true
 
   /@humanwhocodes/config-array@0.11.14:
