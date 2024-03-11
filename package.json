@@ -21,7 +21,7 @@
 		"@astrojs/sitemap": "^3.1.1",
 		"@astrojs/tailwind": "^5.1.0",
 		"@catppuccin/tailwindcss": "^0.1.6",
-		"@fontsource-variable/noto-sans": "^5.0.2",
+		"@fontsource-variable/noto-sans": "^5.0.3",
 		"@fontsource/noto-sans-mono": "^5.0.19",
 		"@types/node": "^20.11.24",
 		"@typescript-eslint/parser": "^7.1.0",
