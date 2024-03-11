@@ -23,7 +23,7 @@
 		"@catppuccin/tailwindcss": "^0.1.6",
 		"@fontsource-variable/noto-sans": "^5.0.3",
 		"@fontsource/noto-sans-mono": "^5.0.19",
-		"@types/node": "^20.11.24",
+		"@types/node": "^20.11.25",
 		"@typescript-eslint/parser": "^7.1.0",
 		"astro": "^4.5.0",
 		"eslint": "^8.57.0",
