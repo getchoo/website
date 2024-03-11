@@ -21,8 +21,8 @@ devDependencies:
     specifier: ^0.1.6
     version: 0.1.6(tailwindcss@3.4.1)
   '@fontsource-variable/noto-sans':
-    specifier: ^5.0.2
-    version: 5.0.2
+    specifier: ^5.0.3
+    version: 5.0.3
   '@fontsource/noto-sans-mono':
     specifier: ^5.0.19
     version: 5.0.19
@@ -741,8 +741,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource-variable/noto-sans@5.0.2:
-    resolution: {integrity: sha512-oXPNolW8ubNxul0L9j7M/VqVfrK3pJ9y33cWQ/RisKTLprhFZR+JAng0zpsJQv9ew/O83frhicrLFw5hq+HeQQ==}
+  /@fontsource-variable/noto-sans@5.0.3:
+    resolution: {integrity: sha512-sngUGrSXCsGePdv7V+/sGKkdMftTZiaoGA4DGE28RVzPjWfCnH9phhhW+E5Ehb7j9DLiv5q5Vka9bLi7XkD4/Q==}
     dev: true
 
   /@fontsource/noto-sans-mono@5.0.19:
