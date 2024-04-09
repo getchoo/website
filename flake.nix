@@ -25,62 +25,69 @@
   };
 
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = with inputs; [ treefmt-nix.flakeModule pre-commit.flakeModule ];
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = with inputs; [
+        treefmt-nix.flakeModule
+        pre-commit.flakeModule
+      ];
 
-      systems =
-        [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
 
-      perSystem = { lib, pkgs, config, self', ... }:
-        let
-          nodejs-slim = pkgs.nodejs-slim_20; # this should be the current lts
+      perSystem = {
+        lib,
+        pkgs,
+        config,
+        self',
+        ...
+      }: let
+        nodejs-slim = pkgs.nodejs-slim_20; # this should be the current lts
+        corepack = pkgs.corepack_20;
 
-          enableAll = lib.flip lib.genAttrs (lib.const { enable = true; });
-        in {
-          treefmt = {
-            projectRootFile = ".git/config";
+        enableAll = lib.flip lib.genAttrs (lib.const {enable = true;});
+      in {
+        treefmt = {
+          projectRootFile = ".git/config";
 
-            programs = enableAll [ "deadnix" "nixfmt" "prettier" ];
+          programs = enableAll ["alejandra" "deadnix" "prettier"];
 
-            settings.global = {
-              excludes = [
-                "./node_modules/*"
-                "./dist/*"
-                "./.astro/*"
-                "flake.lock"
-                "pnpm-lock.yaml"
-              ];
-            };
-          };
-
-          pre-commit.settings = {
-            settings.treefmt.package = config.treefmt.build.wrapper;
-
-            hooks = enableAll [
-              "actionlint"
-              "eclint"
-              "eslint"
-              "markdownlint"
-              "nil"
-              "statix"
-              "treefmt"
-            ];
-          };
-
-          devShells.default = pkgs.mkShellNoCC {
-            shellHook = config.pre-commit.installationScript;
-            packages = [
-              self'.formatter
-              nodejs-slim
-              # use pnpm from package.json
-              (pkgs.runCommand "corepack-enable" {
-                nativeBuildInputs = [ nodejs-slim ];
-              } ''
-                mkdir -p $out/bin
-                corepack enable --install-directory $out/bin
-              '')
+          settings.global = {
+            excludes = [
+              "./node_modules/*"
+              "./dist/*"
+              "./.astro/*"
+              "flake.lock"
+              "pnpm-lock.yaml"
             ];
           };
         };
+
+        pre-commit.settings.hooks =
+          (enableAll [
+            "actionlint"
+            "eclint"
+            "eslint"
+            "nil"
+            "statix"
+            "treefmt"
+          ])
+          // {
+            treefmt.package = config.treefmt.build.wrapper;
+          };
+
+        devShells.default = pkgs.mkShellNoCC {
+          shellHook = config.pre-commit.installationScript;
+          packages = [
+            self'.formatter
+            nodejs-slim
+            # use pnpm from package.json
+            corepack
+          ];
+        };
+      };
     };
 }

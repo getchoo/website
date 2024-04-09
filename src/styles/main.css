@@ -10,7 +10,6 @@
 body {
 	background-color: var(--background-color);
 	font-family: var(--primary-font), system-ui;
-;
 	line-height: 1.5rem;
 	margin-left: auto;
 	margin-right: auto;
@@ -72,4 +71,3 @@ footer {
 		display: flex;
 	}
 }
-
