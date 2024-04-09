@@ -1,20 +1,8 @@
 ---
-import Footer from "@components/Footer.astro";
-import Head from "@components/Head.astro";
-import Nav from "@components/Nav.astro";
-
-const { frontmatter } = Astro.props;
+import Base from "@layouts/Base.astro";
+const { title, description } = Astro.props.frontmatter || Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-	<Head title={frontmatter.title} description={frontmatter.description} />
-	<body
-		class="bg-base text-text p-5 lg:p-0 text-md md:text-lg antialiased max-w-screen-md mx-auto my-10"
-	>
-		<h1><b>getchoo's website 🚀</b></h1>
-		<Nav />
-		<slot />
-		<Footer />
-	</body>
-</html>
+<Base title={title} description={description}>
+	<slot />
+</Base>

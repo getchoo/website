@@ -1,11 +1,8 @@
 ---
-layout: ../layouts/Page.astro
+layout: ../layouts/Index.astro
 title: guzzle guzzle
 description: guzzle guzzle
 ---
-
-import Picture from "astro/components/Picture.astro";
-import obras from "@assets/gifs/obras.gif";
 
 <a hidden rel="me" href="https://wetdry.world/@getchoo">
 	my mastodon account
@@ -13,6 +10,6 @@ import obras from "@assets/gifs/obras.gif";
 
 this is under construction. i'm experimenting with astro
 
-<Picture src={obras} alt="Under construction" formats={["gif"]} class="m-10" />
+![Under construction](../assets/gifs/obras.gif)
 
 [hehe funny click me](/lul)

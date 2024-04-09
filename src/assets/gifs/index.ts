@@ -8,19 +8,19 @@ import steam from "./steam.gif";
 import weezer from "./weezer.gif";
 
 interface Gif {
-	gif: ImageMetadata;
-	alt: string;
+  image: ImageMetadata;
+  alt: string;
 }
 
 const gifs: Gif[] = [
-	{ gif: acab, alt: "ACAB!" },
-	{ gif: arnold, alt: "Hey Arnold!" },
-	{ gif: capitalism, alt: "Let's crush capitalism!" },
-	{ gif: legalize, alt: "Legalize marijuana now!" },
-	{ gif: poweredByNix, alt: "Powered by NixOS" },
-	{ gif: pride, alt: "LGBTQ Pride now!" },
-	{ gif: steam, alt: "Play on Steam!" },
-	{ gif: weezer, alt: "Weezer fan" },
+  { image: acab, alt: "ACAB!" },
+  { image: arnold, alt: "Hey Arnold!" },
+  { image: capitalism, alt: "Let's crush capitalism!" },
+  { image: legalize, alt: "Legalize marijuana now!" },
+  { image: poweredByNix, alt: "Powered by NixOS" },
+  { image: pride, alt: "LGBTQ Pride now!" },
+  { image: steam, alt: "Play on Steam!" },
+  { image: weezer, alt: "Weezer fan" }
 ];
 
 export default gifs;

@@ -1,0 +1,20 @@
+---
+interface NavLink {
+	name: string;
+	url: string;
+}
+
+const links: NavLink[] = [
+	{ name: "home", url: "/" },
+	{
+		name: "github",
+		url: "https://github.com/getchoo",
+	},
+];
+---
+
+<div id="nav_links">
+	{links.map(({ name, url }) => <a href={url}>{name}</a>)}
+</div>
+
+<hr />

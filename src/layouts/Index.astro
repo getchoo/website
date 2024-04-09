@@ -1,0 +1,11 @@
+---
+import Base from "@layouts/Base.astro";
+import Gifs from "@components/Gifs.astro";
+
+const { title, description } = Astro.props.frontmatter;
+---
+
+<Base title={title} description={description}>
+	<slot />
+	<Gifs slot="extra_footer" />
+</Base>

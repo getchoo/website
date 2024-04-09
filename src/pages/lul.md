@@ -4,6 +4,6 @@ title: fard
 description: xd
 ---
 
-<video width="1280" height="720" controls autoplay muted>
+<video controls autoplay muted>
 	<source src="/files/rickroll.mp4" type="video/mp4" />
 </video>
