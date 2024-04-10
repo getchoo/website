@@ -13,8 +13,10 @@ const links: NavLink[] = [
 ];
 ---
 
-<div id="nav_links">
-	{links.map(({ name, url }) => <a href={url}>{name}</a>)}
-</div>
-
-<hr />
+<nav>
+	<div id="nav_links">
+		{links.map(({ name, url }) => <a href={url}>{name}</a>)}
+	</div>
+	
+	<hr />
+</nav>

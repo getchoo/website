@@ -1,37 +1,22 @@
 ---
-import "@fontsource-variable/noto-sans";
-import "@fontsource/noto-sans-mono";
-
-import NavBar from "@components/NavBar.astro";
-import "@styles/main.css";
+import Footer from "@components/Footer.astro";
+import Head from "@components/Head.astro";
+import Nav from "@components/Nav.astro";
 
 const { title, description } = Astro.props.frontmatter || Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>{title}</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="description" content={description} />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-	</head>
-
+	<Head title={title} description={description} />
 	<body>
 		<h1><b>getchoo's website 🚀</b></h1>
 		<slot name="nav">
-			<nav>
-				<slot name="extra_nav" />
-				<NavBar />
-			</nav>
+			<Nav />
 		</slot>
 		<slot />
 		<slot name="footer">
-			<footer>
-				<slot name="extra_footer" />
-				<a href="https://github.com/getchoo/website">source code</a>
-			</footer>
+			<Footer />
 		</slot>
 	</body>
 </html>
