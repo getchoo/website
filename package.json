@@ -31,7 +31,7 @@
 		"prettier-eslint": "^16.3.0",
 		"sharp": "^0.33.3",
 		"typescript": "^5.4.4",
-		"typescript-eslint": "^7.5.0"
+		"typescript-eslint": "^7.6.0"
 	},
 	"packageManager": "pnpm@8.15.3+sha256.fc4a49bd609550a41e14d20efbce802a4b892aa4cac877322de2f0924f122991",
 	"eslintConfig": {
