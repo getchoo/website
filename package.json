@@ -22,7 +22,7 @@
 		"@fontsource/noto-sans-mono": "^5.0.19",
 		"@types/node": "^20.12.7",
 		"@typescript-eslint/parser": "^7.5.0",
-		"astro": "^4.5.16",
+		"astro": "^4.6.2",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"fsevents": "^2.3.3",
