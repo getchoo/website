@@ -11,38 +11,22 @@
 		"build": "astro build",
 		"check": "astro check",
 		"preview": "astro preview",
-		"astro": "astro",
-		"lint": "tsc && eslint .",
-		"format": "prettier --write ."
+		"lint": "tsc && biome lint *",
+		"format": "biome format --write .",
+		"ci": "pnpm run check && tsc && biome ci *"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.5.10",
 		"@astrojs/sitemap": "^3.1.2",
+		"@biomejs/biome": "1.7.0",
 		"@fontsource-variable/noto-sans": "^5.0.4",
 		"@fontsource/noto-sans-mono": "^5.0.19",
 		"@types/node": "^20.12.7",
-		"@typescript-eslint/parser": "^7.7.0",
 		"astro": "^4.6.2",
-		"eslint": "^8.57.0",
-		"eslint-config-prettier": "^9.1.0",
 		"fsevents": "^2.3.3",
 		"lightningcss": "^1.24.1",
-		"prettier": "^3.2.5",
-		"prettier-eslint": "^16.3.0",
 		"sharp": "^0.33.3",
-		"typescript": "^5.4.5",
-		"typescript-eslint": "^7.6.0"
+		"typescript": "^5.4.5"
 	},
-	"packageManager": "pnpm@8.15.3+sha256.fc4a49bd609550a41e14d20efbce802a4b892aa4cac877322de2f0924f122991",
-	"eslintConfig": {
-		"extends": [
-			"eslint:recommended",
-			"plugin:@typescript-eslint/recommended",
-			"prettier"
-		],
-		"parser": "@typescript-eslint/parser",
-		"plugins": ["@typescript-eslint"],
-		"root": true,
-		"ignorePatterns": ["dist/**"]
-	}
+	"packageManager": "pnpm@8.15.3+sha256.fc4a49bd609550a41e14d20efbce802a4b892aa4cac877322de2f0924f122991"
 }

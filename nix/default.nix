@@ -62,7 +62,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       '';
 
       outputHashMode = "recursive";
-      outputHash = "sha256-pKo1t9K24HUOjjfwfubx+JorlAJeshAQBLSABRoSF/k=";
+      outputHash = "sha256-Rd5fdB/pMxHRwy6gRTjQQWX4OlKHUJIqh2KX+9jiBQY=";
     });
   };
 

@@ -2,11 +2,16 @@
 	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
 	"formatter": {
 		"ignore": [
-			".direnv/**",
-			".git/**",
-			"dist/**",
+			".git/",
+			"dist/",
+			".astro/",
+			"node_modules",
+			".direnv/",
+			"result*",
+			"repl-result*",
 			"flake.lock",
 			"pnpm-lock.yaml"
-		]
+		],
+		"indentStyle": "tab"
 	}
 }

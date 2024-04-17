@@ -6,8 +6,7 @@ set -euo pipefail
 
 function build_site {
   pnpm install --frozen-lockfile
-  pnpm run lint
-  pnpm run check
+  pnpm run ci
   pnpm run build
 }
 

@@ -16,8 +16,8 @@ jobs:
         include:
           - name: Build
             command: build
-          - name: Lint
-            command: lint
+          - name: Check
+            command: ci
 
     name: ${{ matrix.name }}
     runs-on: ubuntu-latest
@@ -25,14 +25,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-
       - name: Setup node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "pnpm"
+
+      - name: Install package manager
+        run: |
+          corepack enable
+          corepack prepare --activate
 
       - name: Install dependencies
         run: |
