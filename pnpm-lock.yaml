@@ -15,8 +15,8 @@ devDependencies:
     specifier: 1.7.0
     version: 1.7.0
   '@fontsource-variable/noto-sans':
-    specifier: ^5.0.4
-    version: 5.0.4
+    specifier: ^5.0.5
+    version: 5.0.5
   '@fontsource/noto-sans-mono':
     specifier: ^5.0.19
     version: 5.0.19
@@ -918,8 +918,8 @@ packages:
     dev: true
     optional: true
 
-  /@fontsource-variable/noto-sans@5.0.4:
-    resolution: {integrity: sha512-UCBloRRF3VDWrzUHo1hRr4DOi30Yxqcyogy+oxRLEzlUe59+VWu1uVLAzl5hEszK7HEwvuavyaceNuRTQAbRZg==}
+  /@fontsource-variable/noto-sans@5.0.5:
+    resolution: {integrity: sha512-SVixgckO4DIgvFJ+vTRZEj8vTvjZceuGOhKMgnETItKELl1tHzk+ZFatSTCofPJ1zjhTwqvHrHkFeCbUGiqaRg==}
     dev: true
 
   /@fontsource/noto-sans-mono@5.0.19:
