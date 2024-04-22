@@ -18,8 +18,8 @@ devDependencies:
     specifier: ^5.0.5
     version: 5.0.5
   '@fontsource/noto-sans-mono':
-    specifier: ^5.0.19
-    version: 5.0.19
+    specifier: ^5.0.20
+    version: 5.0.20
   '@types/node':
     specifier: ^20.12.7
     version: 20.12.7
@@ -923,8 +923,8 @@ packages:
     resolution: {integrity: sha512-SVixgckO4DIgvFJ+vTRZEj8vTvjZceuGOhKMgnETItKELl1tHzk+ZFatSTCofPJ1zjhTwqvHrHkFeCbUGiqaRg==}
     dev: true
 
-  /@fontsource/noto-sans-mono@5.0.19:
-    resolution: {integrity: sha512-CdhNptlXRFWsCp9o5z620g5CbH+lCuhRm6DSkmahQvz2ykSJDju+dr59MjxFuLFxFiYGlyN6KS5Nea36CRY05A==}
+  /@fontsource/noto-sans-mono@5.0.20:
+    resolution: {integrity: sha512-4+t+dAnKvihf/uxLw7ZTQc6sTzLvz7PR+p6S9+nHWT8ym05QQiYoUj9L8xwaAACf23SyfCifbhc7EN/RdFwxHw==}
     dev: true
 
   /@img/sharp-darwin-arm64@0.33.3:
