@@ -20,7 +20,7 @@
 		"@astrojs/sitemap": "^3.1.4",
 		"@biomejs/biome": "1.7.0",
 		"@fontsource-variable/noto-sans": "^5.0.5",
-		"@fontsource/noto-sans-mono": "^5.0.19",
+		"@fontsource/noto-sans-mono": "^5.0.20",
 		"@types/node": "^20.12.7",
 		"astro": "^4.6.3",
 		"fsevents": "^2.3.3",
