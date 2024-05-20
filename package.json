@@ -25,7 +25,7 @@
 		"astro": "^4.8.6",
 		"fsevents": "^2.3.3",
 		"lightningcss": "^1.24.1",
-		"sharp": "^0.33.3",
+		"sharp": "^0.33.4",
 		"typescript": "^5.4.5"
 	},
 	"packageManager": "pnpm@8.15.3+sha256.fc4a49bd609550a41e14d20efbce802a4b892aa4cac877322de2f0924f122991"
