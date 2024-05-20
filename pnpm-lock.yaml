@@ -21,11 +21,11 @@ devDependencies:
     specifier: ^5.0.20
     version: 5.0.20
   '@types/node':
-    specifier: ^20.12.11
-    version: 20.12.11
+    specifier: ^20.12.12
+    version: 20.12.12
   astro:
     specifier: ^4.8.6
-    version: 4.8.6(@types/node@20.12.11)(lightningcss@1.24.1)(typescript@5.4.5)
+    version: 4.8.6(@types/node@20.12.12)(lightningcss@1.24.1)(typescript@5.4.5)
   fsevents:
     specifier: ^2.3.3
     version: 2.3.3
@@ -1385,8 +1385,8 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: true
 
-  /@types/node@20.12.11:
-    resolution: {integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==}
+  /@types/node@20.12.12:
+    resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -1394,7 +1394,7 @@ packages:
   /@types/sax@1.2.7:
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
     dev: true
 
   /@types/unist@2.0.10:
@@ -1564,7 +1564,7 @@ packages:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
     dev: true
 
-  /astro@4.8.6(@types/node@20.12.11)(lightningcss@1.24.1)(typescript@5.4.5):
+  /astro@4.8.6(@types/node@20.12.12)(lightningcss@1.24.1)(typescript@5.4.5):
     resolution: {integrity: sha512-psHIfK+e+bMPhRwghV9yCGH/uc1jvY4DHmDZdoEepax9yA7kzYH0wt3dpkqlcrO2zxl5jzSC3DmqZfkD6wnW9A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
@@ -1626,7 +1626,7 @@ packages:
       tsconfck: 3.0.3(typescript@5.4.5)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.11(@types/node@20.12.11)(lightningcss@1.24.1)
+      vite: 5.2.11(@types/node@20.12.12)(lightningcss@1.24.1)
       vitefu: 0.2.5(vite@5.2.11)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -3891,7 +3891,7 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
-  /vite@5.2.11(@types/node@20.12.11)(lightningcss@1.24.1):
+  /vite@5.2.11(@types/node@20.12.12)(lightningcss@1.24.1):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -3919,7 +3919,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       esbuild: 0.20.2
       lightningcss: 1.24.1
       postcss: 8.4.38
@@ -3936,7 +3936,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.11(@types/node@20.12.11)(lightningcss@1.24.1)
+      vite: 5.2.11(@types/node@20.12.12)(lightningcss@1.24.1)
     dev: true
 
   /volar-service-css@0.0.45(@volar/language-service@2.2.4):
