@@ -24,7 +24,7 @@
 		"@types/node": "^20.12.12",
 		"astro": "^4.8.6",
 		"fsevents": "^2.3.3",
-		"lightningcss": "^1.24.1",
+		"lightningcss": "^1.25.0",
 		"sharp": "^0.33.4",
 		"typescript": "^5.4.5"
 	},
