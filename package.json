@@ -22,7 +22,7 @@
 		"@fontsource-variable/noto-sans": "^5.0.5",
 		"@fontsource/noto-sans-mono": "^5.0.20",
 		"@types/node": "^20.12.11",
-		"astro": "^4.8.3",
+		"astro": "^4.8.6",
 		"fsevents": "^2.3.3",
 		"lightningcss": "^1.24.1",
 		"sharp": "^0.33.3",
