@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		{% block head %}
+		<meta charset="UTF-8" />
+		<title>{% block title %}{% endblock title %}</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta
+			name="description"
+			content="{% block description %}{% endblock description %}"
+		/>
+		<link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
+		<link rel="sitemap" href="{{ get_url(path="sitemap.xml") }}" />
+		{% endblock head %}
+	</head>
+	<body>
+		<h1><b>getchoo's website 🚀</b></h1>
+		<nav>
+			{% block nav %}
+			<div id="nav_links">
+				{% for link in config.extra.nav_links %}
+					<a href="{{ link.url }}">{{ link.name }}</a>
+				{% endfor %}
+			</div>
+
+			<hr />
+			{% endblock nav %}
+		</nav>
+		{% block content %}{% endblock content %}
+		<footer>
+			{% block footer %}
+			<a href="{{ config.extra.repository_url }}">source code</a>
+			{% endblock footer %}
+		</footer>
+	</body>
+</html>

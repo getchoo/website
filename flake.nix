@@ -1,11 +1,15 @@
 {
   description = "seth's website";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-checks.url = "github:getchoo/flake-checks";
+  };
 
   outputs = {
     self,
     nixpkgs,
+    flake-checks,
   }: let
     systems = [
       "x86_64-linux"
@@ -16,14 +20,20 @@
 
     forAllSystems = fn: nixpkgs.lib.genAttrs systems (system: fn nixpkgs.legacyPackages.${system});
   in {
-    checks = forAllSystems (
-      {
-        pkgs,
-        system,
-        ...
-      }:
-        import ./nix/checks.nix (pkgs // {formatter = self.formatter.${system};})
-    );
+    checks = forAllSystems (pkgs: let
+      flake-checks' = flake-checks.lib.mkChecks {
+        root = ./.;
+        inherit pkgs;
+      };
+    in {
+      inherit
+        (flake-checks')
+        actionlint
+        alejandra
+        deadnix
+        statix
+        ;
+    });
 
     devShells = forAllSystems ({
       pkgs,
@@ -31,8 +41,7 @@
       ...
     }: {
       default = import ./shell.nix {
-        inherit system;
-        nixpkgs = pkgs;
+        inherit pkgs system;
         formatter = self.formatter.${system};
       };
     });
@@ -45,12 +54,9 @@
       ...
     }: let
       pkgs' = import ./. {
-        inherit system;
-        nixpkgs = pkgs;
+        inherit pkgs system;
       };
     in
       pkgs' // {default = pkgs'.website;});
-
-    overlays.default = final: prev: import ./overlay.nix final prev;
   };
 }

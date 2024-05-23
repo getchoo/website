@@ -5,11 +5,4 @@ updates:
     schedule:
       interval: "weekly"
     commit-message:
-      prefix: "deps(actions)"
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "deps(node)"
+      prefix: "ci"

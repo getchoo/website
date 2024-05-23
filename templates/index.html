@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }}{% endblock title %}
+{% block description %}{{ section.description }}{% endblock description %}
+
+{% block content %}
+
+{{ section.content | safe }}
+
+<div id="gifs">
+	{% for gif in config.extra.gifs %}
+		{% set img = '<img src="' ~ get_url(path='/imgs/gifs/' ~ gif.name) ~ '" alt="' ~ gif.alt ~ '" width=88 height=31 loading="lazy" decoding="async">' %}
+		{% if gif.href %}
+			<a href="{{ gif.href }}">{{ img | safe }}</a>
+		{% else %}
+			{{ img | safe }}
+		{% endif %}
+	{% endfor %}
+</div>
+{% endblock content %}
