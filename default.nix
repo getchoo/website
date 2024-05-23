@@ -4,7 +4,7 @@ let
   flakeSources = builtins.mapAttrs (_: node: fetchTree node.locked) lock.nodes;
 in
   {
-    nixpkgs ?
+    pkgs ?
       import sources.nixpkgs {
         inherit system;
         config = {};
@@ -12,7 +12,6 @@ in
       },
     system ? builtins.currentSystem,
     sources ? flakeSources,
-  }: let
-    pkgs' = import ./overlay.nix (nixpkgs // pkgs') nixpkgs;
-  in
-    pkgs'
+  }: {
+    website = pkgs.callPackage ./nix/package.nix {};
+  }

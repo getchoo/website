@@ -5,9 +5,10 @@
 set -euo pipefail
 
 function build_site {
-  pnpm install --frozen-lockfile
-  pnpm run ci
-  pnpm run build
+    asdf plugin add zola https://github.com/salasrod/asdf-zola
+    asdf install zola 0.17.2
+    asdf global zola 0.17.2
+    zola build --output-dir dist
 }
 
 

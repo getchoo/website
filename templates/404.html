@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}404!{% endblock title %}
+{% block description %}Can I get you some tapwater?{% endblock description %}
+
+{% block content %}
+<h1>404 :(</h1>
+
+<img src="{{ get_url(path='/imgs/tapwater.png') }}" alt="Can I get you some tapwater?" loading="lazy" decoding="async">
+{% endblock content %}

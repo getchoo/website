@@ -4,7 +4,7 @@ let
   flakeSources = builtins.mapAttrs (_: node: fetchTree node.locked) lock.nodes;
 in
   {
-    nixpkgs ?
+    pkgs ?
       import sources.nixpkgs {
         inherit system;
         config = {};
@@ -12,14 +12,16 @@ in
       },
     system ? builtins.currentSystem,
     sources ? flakeSources,
-    formatter ? nixpkgs.alejandra,
+    formatter ? pkgs.alejandra,
   }:
-    nixpkgs.mkShellNoCC {
+    pkgs.mkShellNoCC {
       packages = [
+        pkgs.zola
+
+        # linters + formatters
         formatter
-        nixpkgs.biome
-        nixpkgs.nodejs-slim
-        # use package manager from package.json
-        nixpkgs.corepack
+        pkgs.actionlint
+        pkgs.nodePackages.alex
+        pkgs.nodePackages.prettier
       ];
     }

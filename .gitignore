@@ -1,17 +1,6 @@
-# build output
+# zola build dir
 dist/
-
-# generated types
-.astro/
-
-# dependencies
-node_modules/
-
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+public/
 
 # environment variables
 .env
