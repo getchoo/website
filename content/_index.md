@@ -7,7 +7,7 @@ description = "guzzle guzzle"
 	my mastodon account
 </a>
 
-this is under construction. i'm experimenting with astro
+this is under construction. i'm experimenting with zola
 
 ![Under construction](/imgs/gifs/obras.gif)
 
