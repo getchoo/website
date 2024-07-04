@@ -1,17 +1,10 @@
 {
   description = "seth's website";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    flake-checks.url = "github:getchoo/flake-checks";
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      flake-checks,
-    }:
+    { self, nixpkgs }:
     let
       inherit (nixpkgs) lib;
       systems = [
@@ -28,18 +21,39 @@
       checks = forAllSystems (
         system:
         let
-          flake-checks' = flake-checks.lib.mkChecks {
-            root = ./.;
-            pkgs = nixpkgsFor.${system};
-          };
+          pkgs = nixpkgsFor.${system};
         in
         {
-          inherit (flake-checks')
-            actionlint
-            alejandra
-            deadnix
-            statix
-            ;
+          check-lint =
+            pkgs.runCommand "check-lint"
+              {
+                nativeBuildInputs = [
+                  pkgs.actionlint
+                  pkgs.deadnix
+                  pkgs.statix
+                ];
+              }
+              ''
+                echo "running actionlint..."
+                actionlint ${self}/.github/workflows/*
+
+                echo "running deadnix..."
+                deadnix --fail ${self}
+
+                echo "running statix..."
+                statix check ${self}
+
+                touch $out
+              '';
+
+          check-formatting =
+            pkgs.runCommand "check-formatting" { nativeBuildInputs = [ pkgs.nixfmt-rfc-style ]; }
+              ''
+                echo "running nixfmt..."
+                nixfmt --check ${self}
+
+                touch $out
+              '';
         }
       );
 
