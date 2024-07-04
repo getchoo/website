@@ -13,6 +13,7 @@
       flake-checks,
     }:
     let
+      inherit (nixpkgs) lib;
       systems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -20,15 +21,16 @@
         "aarch64-darwin"
       ];
 
-      forAllSystems = fn: nixpkgs.lib.genAttrs systems (system: fn nixpkgs.legacyPackages.${system});
+      forAllSystems = lib.genAttrs systems;
+      nixpkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
     in
     {
       checks = forAllSystems (
-        pkgs:
+        system:
         let
           flake-checks' = flake-checks.lib.mkChecks {
             root = ./.;
-            inherit pkgs;
+            pkgs = nixpkgsFor.${system};
           };
         in
         {
@@ -41,22 +43,23 @@
         }
       );
 
-      devShells = forAllSystems (
-        { pkgs, system, ... }:
-        {
-          default = import ./shell.nix {
-            inherit pkgs system;
-            formatter = self.formatter.${system};
-          };
-        }
-      );
+      devShells = forAllSystems (system: {
+        default = import ./shell.nix {
+          inherit system;
+          pkgs = nixpkgsFor.${system};
+          formatter = self.formatter.${system};
+        };
+      });
 
-      formatter = forAllSystems (pkgs: pkgs.nixfmt-rfc-style);
+      formatter = forAllSystems (system: nixpkgsFor.${system}.nixfmt-rfc-style);
 
       packages = forAllSystems (
-        { pkgs, system, ... }:
+        system:
         let
-          pkgs' = import ./. { inherit pkgs system; };
+          pkgs' = import ./. {
+            inherit system;
+            pkgs = nixpkgsFor.${system};
+          };
         in
         pkgs' // { default = pkgs'.website; }
       );
