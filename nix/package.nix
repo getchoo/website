@@ -18,9 +18,7 @@ stdenvNoCC.mkDerivation {
     ];
   };
 
-  nativeBuildInputs = [
-    zola
-  ];
+  nativeBuildInputs = [ zola ];
 
   dontConfigure = true;
   doCheck = false;
@@ -40,7 +38,7 @@ stdenvNoCC.mkDerivation {
   passthru = {
     serve = writeShellApplication {
       name = "serve";
-      runtimeInputs = [zola];
+      runtimeInputs = [ zola ];
 
       text = ''
         zola serve
@@ -51,6 +49,6 @@ stdenvNoCC.mkDerivation {
   meta = {
     homepage = "https://github.com/getchoo/website";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [getchoo];
+    maintainers = with lib.maintainers; [ getchoo ];
   };
 }
