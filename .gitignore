@@ -1,20 +1,13 @@
-# zola build dir
-dist/
-public/
+# lume
+_site
+_cache
 
-# environment variables
-.env
-.env.production
+# nix
+result
+result-*
+repl-result-*
 
-# macOS-specific files
-.DS_Store
-
-# nix stuff
+# direnv
 .direnv/
-result*
-repl-result*
-.pre-commit-config.yaml
-
-# IDE stuff
-.vscode/
-.idea/
+.env*
+!.envrc

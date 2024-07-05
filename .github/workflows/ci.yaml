@@ -7,25 +7,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  ci:
-    name: Build site
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v13
-
-      - name: Setup cache
-        uses: DeterminateSystems/magic-nix-cache-action@v7
-
-      - name: Build site
-        run: |
-          nix build --print-build-logs
-
   check-and-lint:
     name: Check & lint
 

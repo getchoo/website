@@ -1,3 +1,3 @@
 # website
 
-my personal website - made with [zola](https://www.getzola.org/)
+my personal website - made with [lume](https://lume.land/)
