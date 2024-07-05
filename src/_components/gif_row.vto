@@ -1,0 +1,10 @@
+{{ for gif of gifs }}
+	{{
+		set img = `<img src="/imgs/gifs/${gif.name}" alt="${gif.alt}" width="88" height="31" loading="lazy" decoding="async">`
+	}}
+	{{ if gif.href }}
+		<a href="{{ gif.href }}">{{ img }}</a>
+	{{ else }}
+		{{ img }}
+	{{ /if }}
+{{ /for }}

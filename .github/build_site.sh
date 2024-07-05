@@ -5,10 +5,7 @@
 set -euo pipefail
 
 function build_site {
-    asdf plugin add zola https://github.com/salasrod/asdf-zola
-    asdf install zola 0.17.2
-    asdf global zola 0.17.2
-    zola build --output-dir dist
+    curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/buildhome/.deno/bin/deno task build
 }
 
 

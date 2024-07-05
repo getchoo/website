@@ -34,25 +34,21 @@
         treefmt = treefmtFor.${system}.config.build.check self;
       });
 
-      devShells = forAllSystems (system: {
-        default = import ./shell.nix {
-          inherit system;
-          pkgs = nixpkgsFor.${system};
-          formatter = self.formatter.${system};
-        };
-      });
-
-      formatter = forAllSystems (system: treefmtFor.${system}.config.build.wrapper);
-
-      packages = forAllSystems (
+      devShells = forAllSystems (
         system:
         let
-          pkgs' = import ./. {
-            inherit system;
-            pkgs = nixpkgsFor.${system};
-          };
+          pkgs = nixpkgsFor.${system};
         in
-        pkgs' // { default = pkgs'.website; }
+        {
+          default = pkgs.mkShellNoCC {
+            packages = [
+              pkgs.deno
+              self.formatter.${system}
+            ];
+          };
+        }
       );
+
+      formatter = forAllSystems (system: treefmtFor.${system}.config.build.wrapper);
     };
 }
