@@ -5,7 +5,7 @@
 set -euo pipefail
 
 function build_site {
-    curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/buildhome/.deno/bin/deno task build
+    curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/buildhome/.deno/bin/deno task build --dest dist/
 }
 
 
