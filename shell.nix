@@ -11,11 +11,7 @@
 pkgs.mkShellNoCC {
   packages = [
     pkgs.zola
-
-    # linters + formatters
     formatter
     pkgs.actionlint
-    pkgs.nodePackages.alex
-    pkgs.nodePackages.prettier
   ];
 }

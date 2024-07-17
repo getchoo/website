@@ -1,10 +1,21 @@
 {
   description = "seth's website";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 
   outputs =
-    { self, nixpkgs }:
+    {
+      self,
+      nixpkgs,
+      treefmt-nix,
+    }:
     let
       inherit (nixpkgs) lib;
       systems = [
@@ -16,46 +27,12 @@
 
       forAllSystems = lib.genAttrs systems;
       nixpkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
+      treefmtFor = forAllSystems (system: treefmt-nix.lib.evalModule nixpkgsFor.${system} ./treefmt.nix);
     in
     {
-      checks = forAllSystems (
-        system:
-        let
-          pkgs = nixpkgsFor.${system};
-        in
-        {
-          check-lint =
-            pkgs.runCommand "check-lint"
-              {
-                nativeBuildInputs = [
-                  pkgs.actionlint
-                  pkgs.deadnix
-                  pkgs.statix
-                ];
-              }
-              ''
-                echo "running actionlint..."
-                actionlint ${self}/.github/workflows/*
-
-                echo "running deadnix..."
-                deadnix --fail ${self}
-
-                echo "running statix..."
-                statix check ${self}
-
-                touch $out
-              '';
-
-          check-formatting =
-            pkgs.runCommand "check-formatting" { nativeBuildInputs = [ pkgs.nixfmt-rfc-style ]; }
-              ''
-                echo "running nixfmt..."
-                nixfmt --check ${self}
-
-                touch $out
-              '';
-        }
-      );
+      checks = forAllSystems (system: {
+        treefmt = treefmtFor.${system}.config.build.check self;
+      });
 
       devShells = forAllSystems (system: {
         default = import ./shell.nix {
@@ -65,7 +42,7 @@
         };
       });
 
-      formatter = forAllSystems (system: nixpkgsFor.${system}.nixfmt-rfc-style);
+      formatter = forAllSystems (system: treefmtFor.${system}.config.build.wrapper);
 
       packages = forAllSystems (
         system:
