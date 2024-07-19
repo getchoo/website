@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
+	{% block head %}
 	<head>
-		{% block head %}
 		<meta charset="UTF-8" />
 		<title>{% block title %}{% endblock title %}</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,14 +9,14 @@
 			name="description"
 			content="{% block description %}{% endblock description %}"
 		/>
-		<link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
-		<link rel="sitemap" href="{{ get_url(path="sitemap.xml") }}" />
-		{% endblock head %}
+		<link rel="stylesheet" href="/main.css" />
+		<link rel="sitemap" href="/sitemap.xml" />
 	</head>
+	{% endblock head %}
 	<body>
 		<h1><b>getchoo's website 🦀</b></h1>
+		{% block nav %}
 		<nav>
-			{% block nav %}
 			<div id="nav_links">
 				{% for link in config.extra.nav_links %}
 					<a href="{{ link.url }}">{{ link.name }}</a>
@@ -24,13 +24,13 @@
 			</div>
 
 			<hr />
-			{% endblock nav %}
 		</nav>
+		{% endblock nav %}
 		{% block content %}{% endblock content %}
+		{% block footer %}
 		<footer>
-			{% block footer %}
 			<a href="{{ config.extra.repository_url }}">source code</a>
-			{% endblock footer %}
 		</footer>
+		{% endblock footer %}
 	</body>
 </html>

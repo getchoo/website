@@ -1,9 +1,11 @@
+@import url("https://unpkg.com/@catppuccin/palette/css/catppuccin.css");
+
 :root {
-	--background-color: #1e1e2e;
+	--background-color: var(--ctp-mocha-base);
 	--primary-font: "Noto Sans";
-	--regular-text: #cdd6f4;
-	--blue-text: #89b4fa;
-	--subtext: #bac2de;
+	--regular-text: var(--ctp-mocha-text);
+	--blue-text: var(--ctp-mocha-blue);
+	--subtext: var(--ctp-mocha-subtext1);
 	--medium-screen: 768px;
 }
 

@@ -9,7 +9,7 @@
 
 <div id="gifs">
 	{% for gif in config.extra.gifs %}
-		{% set img = '<img src="' ~ get_url(path='/imgs/gifs/' ~ gif.name) ~ '" alt="' ~ gif.alt ~ '" width=88 height=31 loading="lazy" decoding="async">' %}
+		{% set img = '<img src = "/imgs/gifs/' ~ gif.name ~'" alt="' ~ gif.alt ~ '" width=88 height=31 loading="lazy" decoding="async">' %}
 		{% if gif.href %}
 			<a href="{{ gif.href }}">{{ img | safe }}</a>
 		{% else %}
