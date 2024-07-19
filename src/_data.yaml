@@ -1,0 +1,33 @@
+repository_url: "https://github.com/getchoo/website"
+
+metas:
+  site: "getchoo.com"
+  title: "=title"
+  description: "=description"
+  lang: "en"
+  color: "#89b4fa"
+  icon: "/favicon.ico"
+
+home_page_gifs:
+  - name: "acab.gif"
+    alt: "ACAB!"
+  - name: "arnold.gif"
+    alt: "Hey Arnold!"
+  - name: "capitalism.gif"
+    alt: "Let's crush capitalism!"
+  - name: "legalize.gif"
+    alt: "Legalize marijuana now!"
+  - name: "poweredbynix.svg"
+    alt: "Powered by NixOS"
+    href: "https://github.com/sakecode"
+  - name: "pride.gif"
+    alt: "LGBTQ Pride now!"
+  - name: "steam.gif"
+    alt: "Play on Steam!"
+    href: "https://dnsense.pub/"
+  - name: "weezer.gif"
+    alt: "Weezer fan"
+
+nav_links:
+  home: "/"
+  github: "https://github.com/getchoo"
