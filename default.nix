@@ -23,7 +23,6 @@
         fileset = lib.fileset.unions [
           ./config.toml
           ./content
-          ./highlight_themes
           ./static
           ./templates
         ];

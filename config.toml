@@ -2,22 +2,13 @@ base_url = "https://getchoo.com"
 
 title = "guzzle guzzle"
 description = "guzzle guzzle"
-
 minify_html = true
-
 hard_link_static = true
 
 [markdown]
-highlight_code = true
-
-extra_syntaxes_and_themes = [ "highlight_themes/catppuccin" ]
-
-highlight_theme = "catppuccin-mocha"
-
+highlight_code = false
 render-emoji = true
-
 external_links_target_blank = true
-
 lazy_async_image = true
 
 [extra]
