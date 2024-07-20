@@ -1,0 +1,9 @@
+<nav>
+	<div id="nav_links">
+		{% for link in config.extra.nav_links %}
+			<a href="{{ link.url }}">{{ link.name }}</a>
+		{% endfor %}
+	</div>
+
+	<hr />
+</nav>

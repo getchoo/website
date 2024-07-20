@@ -1,6 +1,6 @@
 +++
-title = "guzzle guzzle"
-description = "guzzle guzzle"
+title = "home"
+description = "rawr"
 +++
 
 <a hidden rel="me" href="https://wetdry.world/@getchoo">

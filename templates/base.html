@@ -1,36 +1,10 @@
 <!doctype html>
 <html lang="en">
-	{% block head %}
-	<head>
-		<meta charset="UTF-8" />
-		<title>{% block title %}{% endblock title %}</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta
-			name="description"
-			content="{% block description %}{% endblock description %}"
-		/>
-		<style>{{ load_data(path="static/main.css") | safe }}</style>
-		<link rel="sitemap" href="sitemap.xml" />
-	</head>
-	{% endblock head %}
+	{% include "partials/head.html" %}
 	<body>
 		<h1><b>getchoo's website 🦀</b></h1>
-		{% block nav %}
-		<nav>
-			<div id="nav_links">
-				{% for link in config.extra.nav_links %}
-					<a href="{{ link.url }}">{{ link.name }}</a>
-				{% endfor %}
-			</div>
-
-			<hr />
-		</nav>
-		{% endblock nav %}
+		{% include "partials/nav.html" %}
 		{% block content %}{% endblock content %}
-		{% block footer %}
-		<footer>
-			<a href="{{ config.extra.repository_url }}">source code</a>
-		</footer>
-		{% endblock footer %}
+		{% include "partials/footer.html" %}
 	</body>
 </html>

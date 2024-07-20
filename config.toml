@@ -1,6 +1,6 @@
 base_url = "https://getchoo.com"
 
-title = "guzzle guzzle"
+title = "getchoo's website"
 description = "guzzle guzzle"
 minify_html = true
 hard_link_static = true
