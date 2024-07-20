@@ -9,8 +9,8 @@
 			name="description"
 			content="{% block description %}{% endblock description %}"
 		/>
-		<link rel="stylesheet" href="/main.css" />
-		<link rel="sitemap" href="/sitemap.xml" />
+		<style>{{ load_data(path="static/main.css") | safe }}</style>
+		<link rel="sitemap" href="sitemap.xml" />
 	</head>
 	{% endblock head %}
 	<body>
