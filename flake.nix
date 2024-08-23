@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    nix-filter.url = "github:numtide/nix-filter";
+
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,45 +16,51 @@
     {
       self,
       nixpkgs,
+      nix-filter,
       treefmt-nix,
     }:
     let
       inherit (nixpkgs) lib;
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
+      systems = lib.systems.flakeExposed;
 
       forAllSystems = lib.genAttrs systems;
       nixpkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
-      treefmtFor = forAllSystems (system: treefmt-nix.lib.evalModule nixpkgsFor.${system} ./treefmt.nix);
+      treefmtFor = forAllSystems (
+        system: treefmt-nix.lib.evalModule nixpkgsFor.${system} (self + "/treefmt.nix")
+      );
     in
     {
       checks = forAllSystems (system: {
         treefmt = treefmtFor.${system}.config.build.check self;
       });
 
-      devShells = forAllSystems (system: {
-        default = import ./shell.nix {
-          inherit system;
+      devShells = forAllSystems (
+        system:
+        let
           pkgs = nixpkgsFor.${system};
-          formatter = self.formatter.${system};
-        };
-      });
+        in
+        {
+          default = pkgs.mkShellNoCC {
+            packages = [
+              pkgs.zola
+              self.formatter.${system}
+              pkgs.actionlint
+            ];
+          };
+        }
+      );
 
       formatter = forAllSystems (system: treefmtFor.${system}.config.build.wrapper);
 
       packages = forAllSystems (
         system:
         let
-          pkgs' = import ./. {
-            inherit system;
-            pkgs = nixpkgsFor.${system};
-          };
+          pkgs = nixpkgsFor.${system};
         in
-        pkgs' // { default = pkgs'.website; }
+        {
+          website = pkgs.callPackage ./nix/package.nix { inherit nix-filter self; };
+          default = self.packages.${system}.website;
+        }
       );
     };
 }
