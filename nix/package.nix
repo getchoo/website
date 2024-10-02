@@ -12,7 +12,7 @@
 let
   website = stdenvNoCC.mkDerivation {
     pname = "getchoo-website";
-    version = builtins.substring 0 8 self.lastModifiedDate or "dirty";
+    version = self.shortRev or self.dirtyShortRev or "unknown";
 
     src = nix-filter.lib {
       root = self;
