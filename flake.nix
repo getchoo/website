@@ -5,11 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nix-filter.url = "github:numtide/nix-filter";
-
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -17,7 +12,6 @@
       self,
       nixpkgs,
       nix-filter,
-      treefmt-nix,
     }:
     let
       inherit (nixpkgs) lib;
@@ -25,15 +19,8 @@
 
       forAllSystems = lib.genAttrs systems;
       nixpkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
-      treefmtFor = forAllSystems (
-        system: treefmt-nix.lib.evalModule nixpkgsFor.${system} (self + "/treefmt.nix")
-      );
     in
     {
-      checks = forAllSystems (system: {
-        treefmt = treefmtFor.${system}.config.build.check self;
-      });
-
       devShells = forAllSystems (
         system:
         let
@@ -43,14 +30,18 @@
           default = pkgs.mkShellNoCC {
             packages = [
               pkgs.zola
-              self.formatter.${system}
+
               pkgs.actionlint
+              pkgs.deadnix
+              pkgs.nil
+              pkgs.statix
+              self.formatter.${system}
             ];
           };
         }
       );
 
-      formatter = forAllSystems (system: treefmtFor.${system}.config.build.wrapper);
+      formatter = forAllSystems (system: nixpkgsFor.${system}.nixfmt-rfc-style);
 
       packages = forAllSystems (
         system:

@@ -26,11 +26,11 @@ let
 
     nativeBuildInputs = [ zola ];
 
+    postBuild = "zola build";
+    postInstall = "mv public $out";
+
     dontConfigure = true;
     dontFixup = true;
-
-    buildPhase = "zola build";
-    installPhase = "mv public $out";
 
     passthru = {
       serve = writeShellApplication {
