@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 	{{ section.content | safe }}
 
-	<div id="gifs">
-		{% for gif in config.extra.gifs %}
-			{% set img = '<img src = "/imgs/gifs/' ~ gif.name ~'" alt="' ~ gif.alt ~ '" width=88 height=31 loading="lazy" decoding="async">' %}
-			{% if gif.href %}
-				<a href="{{ gif.href }}">{{ img | safe }}</a>
-			{% else %}
-				{{ img | safe }}
-			{% endif %}
+	<div class="gif-buttons">
+		{% for button in config.extra.buttons %}
+			<div class="gif-button">
+				{% set imageTag = '<img
+				  src="/imgs/buttons/' ~ button.name ~ '"
+				  alt="' ~ button.alt ~ '"
+				  width=88
+				  height=31
+				  decoding="async"
+				  loading="lazy"
+				>' %}
+				{% if button.link %}
+					<a href="{{ button.link }}">{{ imageTag | safe }}</a>
+				{% else %}
+					{{ imageTag | safe }}
+				{% endif %}
+			</div>
 		{% endfor %}
 	</div>
 {% endblock content %}

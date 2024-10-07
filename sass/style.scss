@@ -1,0 +1,76 @@
+$base: #1e1e2e;
+$blue: #89b4fa;
+$surface: #313244;
+$text: #cdd6f4;
+
+a {
+	color: $blue;
+}
+
+body {
+	font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+	color: $text;
+	background-color: $base;
+	max-width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1.5rem;
+
+	@media (min-width: 768px) {
+		max-width: 50%;
+	}
+}
+
+nav {
+	align-items: center;
+	background-color: $surface;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	padding: 0.5rem;
+
+	a {
+		margin: 0.5rem;
+	}
+
+	@media (min-width: 375px) {
+		a {
+			margin: 0.75rem;
+		}
+	}
+
+	@media (min-width: 768px) {
+		a {
+			font-size: 1.5rem;
+			margin: 1rem;
+		}
+	}
+}
+
+footer {
+	font-size: 0.6rem;
+	text-align: right;
+
+	@media (min-width: 768px) {
+		font-size: 0.75rem;
+	}
+
+	p {
+		margin: 0.25rem;
+	}
+}
+
+.main-content {
+	padding: 1rem;
+}
+
+.gif-buttons {
+	align-items: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.gif-button {
+	padding: 0.25rem;
+}
