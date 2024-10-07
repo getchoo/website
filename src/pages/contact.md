@@ -1,6 +1,8 @@
-+++
-title = "Contact Me"
-+++
+---
+layout: ../layouts/Base.astro
+title: Contact Me
+description: My contact information
+---
 
 # Contact
 

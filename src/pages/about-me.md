@@ -1,7 +1,8 @@
-+++
-title = "About me"
-description = "Information about Getchoo"
-+++
+---
+layout: ../layouts/Base.astro
+title: About me
+description: Information about Getchoo
+---
 
 # About Me
 
@@ -15,6 +16,7 @@ and/or personally use.
 Some technologies I play around with the most include the aforementioned
 [Nix](https://nix.dev), [GitHub Actions](https://docs.github.com/en/actions),
 [Bash](https://www.gnu.org/software/bash/) (usually in slightly horrifying
-ways), [Deno](https://deno.com/), [Rust](https://rust-lang.org/),
-[Python](https://www.python.org/), and [Zola](https://getzola.org) (which this
-site is built with!)
+ways), [Deno](https://deno.com/), [Cloudflare
+Workers](https://workers.cloudflare.com/), [Rust](https://rust-lang.org/),
+[FastAPI](https://www.python.org/), and [Astro](https://astro.build) (which
+this site is made with!)

@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+
+import Base from "@layouts/Base.astro";
+import GifButtons from "@components/GifButtons.astro";
+import obras from "@assets/obras.gif";
+---
+
+<Base description="My home page">
+	<a hidden rel="me" href="https://wetdry.world/@getchoo">
+		My Mastodon account
+	</a>
+
+	<h1>Getchoo's website 🚀</h1>
+
+	<p>Constantly under construction since 2021!</p>
+
+	<Image src={obras} alt="Under construction" />
+
+	<GifButtons />
+</Base>

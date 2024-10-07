@@ -1,0 +1,58 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+const gifs = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/buttons/*.{gif,svg}",
+);
+
+const gifButtons = [
+	{ buttonName: "acab.gif", altText: "ACAB!" },
+	{
+		buttonName: "arnold.gif",
+		altText: "Hey Arnold!",
+	},
+	{
+		buttonName: "capitalism.gif",
+		altText: "Let's crush capitalism!",
+	},
+	{
+		buttonName: "legalize.gif",
+		altText: "Legalize marijuana now!",
+	},
+	{
+		buttonName: "poweredbynix.svg",
+		altText: "Powered by NixOS",
+		link: "https://github.com/sakecode",
+	},
+	{
+		buttonName: "pride.gif",
+		altText: "LGBTQ Pride now!",
+	},
+	{
+		buttonName: "steam.gif",
+		altText: "Play on Steam!",
+		link: "https://dnsense.pub/",
+	},
+	{ buttonName: "weezer.gif", altText: "Weezer fan" },
+];
+---
+
+<div class="gif-buttons">
+	{
+		gifButtons.map(({ buttonName, altText, link }) => {
+			const imageTag = (
+				<Image
+					src={gifs[`/src/assets/buttons/${buttonName}`]()}
+					alt={altText}
+				/>
+			);
+
+			return (
+				<div class="gif-button">
+					{link ? <a href={link}>{imageTag}</a> : imageTag}
+				</div>
+			);
+		})
+	}
+</div>

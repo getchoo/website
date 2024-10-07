@@ -4,4 +4,4 @@
 #
 set -euo pipefail
 
-zola build --output-dir dist
+pnpm run build
