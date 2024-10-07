@@ -1,9 +1,8 @@
 {
-  description = "seth's website";
+  description = "Getchoo's website";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
     nix-filter.url = "github:numtide/nix-filter";
   };
 
@@ -21,6 +20,25 @@
       nixpkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
     in
     {
+      apps = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgsFor.${system};
+        in
+        {
+          serve = {
+            type = "app";
+            program = toString (
+              pkgs.runCommand "serve-website" { nativeBuildInputs = [ pkgs.zola ]; } ''
+                tmpdir=$(mktemp -d)
+                cd ${self.packages.${system}.website.src}
+                zola serve --force --output-dir "$tmpdir"
+              ''
+            );
+          };
+        }
+      );
+
       devShells = forAllSystems (
         system:
         let
@@ -49,7 +67,44 @@
           pkgs = nixpkgsFor.${system};
         in
         {
-          website = pkgs.callPackage ./nix/package.nix { inherit nix-filter self; };
+          website = pkgs.callPackage (
+            {
+              lib,
+              stdenvNoCC,
+              writeShellApplication,
+              zola,
+            }:
+
+            stdenvNoCC.mkDerivation {
+              pname = "getchoo-website";
+              version = self.shortRev or self.dirtyShortRev or "unknown";
+
+              src = nix-filter.lib.filter {
+                root = self;
+                include = [
+                  "config.toml"
+                  "content"
+                  "static"
+                  "templates"
+                ];
+              };
+
+              nativeBuildInputs = [ zola ];
+
+              postBuild = "zola build --output-dir $out";
+
+              dontConfigure = true;
+              dontInstall = true;
+              dontFixup = true;
+
+              meta = {
+                homepage = "https://github.com/getchoo/website";
+                license = lib.licenses.mit;
+                maintainers = with lib.maintainers; [ getchoo ];
+              };
+            }
+          ) { };
+
           default = self.packages.${system}.website;
         }
       );
