@@ -84,6 +84,8 @@
                 include = [
                   "config.toml"
                   "content"
+                  "highlight_themes"
+                  "sass"
                   "static"
                   "templates"
                 ];
