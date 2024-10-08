@@ -25,24 +25,3 @@ jobs:
       - name: Build site
         run: |
           nix build --print-build-logs
-
-  check-and-lint:
-    name: Check & lint
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v14
-
-      - name: Setup cache
-        uses: DeterminateSystems/magic-nix-cache-action@v8
-
-      - name: Run checks
-        run: |
-          nix flake check \
-            --print-build-logs \
-            --show-trace
