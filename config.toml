@@ -1,31 +1,43 @@
 base_url = "https://getchoo.com"
 
-title = "getchoo's website"
+title = "Getchoo's website"
 description = "guzzle guzzle"
+
+default_language = "en"
+
+compile_sass = true
 minify_html = true
-hard_link_static = true
+generate_feeds = true
+
+author = "Getchoo"
 
 [markdown]
-highlight_code = false
+highlight_code = true
+extra_syntaxes_and_themes = ["highlight_themes"]
+highlight_theme = "catppuccin-mocha"
+
 render-emoji = true
 external_links_target_blank = true
 lazy_async_image = true
+bottom_footnotes = true
 
 [extra]
-gifs = [
+buttons = [
 	{ name = "acab.gif", alt = "ACAB!" },
 	{ name = "arnold.gif", alt = "Hey Arnold!" },
 	{ name = "capitalism.gif", alt = "Let's crush capitalism!" },
 	{ name = "legalize.gif", alt = "Legalize marijuana now!" },
-	{ name = "poweredbynix.svg", alt = "Powered by NixOS", href = "https://github.com/sakecode" },
+	{ name = "poweredbynix.svg", alt = "Powered by NixOS", link = "https://github.com/sakecode" },
 	{ name = "pride.gif", alt = "LGBTQ Pride now!" },
-	{ name = "steam.gif", alt = "Play on Steam!", href ="https://dnsense.pub/" },
+	{ name = "steam.gif", alt = "Play on Steam!", link = "https://dnsense.pub/" },
 	{ name = "weezer.gif", alt = "Weezer fan" },
 ]
 
 nav_links = [
-	{ name = "home", url = "/" },
-	{ name = "github", url = "https://github.com/getchoo" }
+	{ name = "Home", url = "/" },
+	{ name = "About Me", url = "/about-me" },
+	{ name = "Contact", url = "/contact" },
+	{ name = "GitHub", url = "https://github.com/getchoo" }
 ]
 
 repository_url = "https://github.com/getchoo/website"

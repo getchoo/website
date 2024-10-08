@@ -2,9 +2,12 @@
 <html lang="en">
 	{% include "partials/head.html" %}
 	<body>
-		<h1><b>getchoo's website 🦀</b></h1>
-		{% include "partials/nav.html" %}
-		{% block content %}{% endblock content %}
+		<header>
+			{% include "partials/nav.html" %}
+		</header>
+		<div class="main-content">
+			{% block content %}{% endblock content %}
+		</div>
 		{% include "partials/footer.html" %}
 	</body>
 </html>

@@ -1,12 +1,13 @@
 +++
-title = "home"
-description = "rawr"
+description = "My home page"
 +++
 
 <a hidden rel="me" href="https://wetdry.world/@getchoo">
-	my mastodon account
+	My Mastodon account
 </a>
 
-this is under construction. i'm experimenting with zola
+# Getchoo's Website 🦀
 
-![Under construction](/imgs/gifs/obras.gif)
+Constantly under construction since 2021!
+
+![Under construction](/imgs/obras.gif)
