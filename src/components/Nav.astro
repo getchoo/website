@@ -1,0 +1,18 @@
+---
+const navLinks = [
+	{ name: "Home", url: "/" },
+	{ name: "About Me", url: "/about-me" },
+	{ name: "Contact", url: "/contact" },
+	{ name: "GitHub", url: "https://github.com/getchoo" },
+];
+---
+
+<nav>
+	{
+		navLinks.map(({ name, url }) => (
+			<div>
+				<a href={url}>{name}</a>
+			</div>
+		))
+	}
+</nav>

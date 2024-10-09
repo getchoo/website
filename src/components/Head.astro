@@ -1,0 +1,22 @@
+---
+import "@styles/style.scss";
+import "@fontsource/noto-sans";
+import notoSansWoff2 from "@fontsource/noto-sans/files/noto-sans-latin-400-normal.woff2";
+
+const { title, description } = Astro.props;
+---
+
+<head>
+	<meta charset="UTF-8" />
+	<title>{title || "Getchoo's Website"}</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content={description || "guzzle guzzle"} />
+	<link
+		rel="preload"
+		as="font"
+		type="font/woff2"
+		href={notoSansWoff2}
+		crossorigin="anonymous"
+	/>
+	<link rel="sitemap" href="/sitemap-index.xml" />
+</head>

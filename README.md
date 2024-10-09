@@ -1,3 +1,3 @@
-# website
+# Website
 
-my personal website - made with [zola](https://www.getzola.org/)
+My personal website, made with [Astro](https://astro.build/)

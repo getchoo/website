@@ -1,14 +1,25 @@
-$base: #1e1e2e;
-$blue: #89b4fa;
-$surface: #313244;
-$text: #cdd6f4;
+@import "@catppuccin/palette/scss/_mocha.scss";
 
 a {
 	color: $blue;
 }
 
 body {
-	font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+	font-family:
+		Noto Sans,
+		-apple-system,
+		BlinkMacSystemFont,
+		avenir next,
+		avenir,
+		segoe ui,
+		helvetica neue,
+		helvetica,
+		Cantarell,
+		Ubuntu,
+		roboto,
+		noto,
+		arial,
+		sans-serif;
 	color: $text;
 	background-color: $base;
 	max-width: 75%;
@@ -23,8 +34,9 @@ body {
 
 nav {
 	align-items: center;
-	background-color: $surface;
+	background-color: $surface0;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	margin: auto;
 	padding: 0.5rem;
@@ -41,8 +53,13 @@ nav {
 
 	@media (min-width: 768px) {
 		a {
-			font-size: 1.5rem;
 			margin: 1rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		a {
+			font-size: 1.5rem;
 		}
 	}
 }

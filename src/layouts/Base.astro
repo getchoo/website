@@ -1,0 +1,21 @@
+---
+import Footer from "@components/Footer.astro";
+import Head from "@components/Head.astro";
+import Nav from "@components/Nav.astro";
+
+const { title, description } = Astro.props.frontmatter || Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<Head title={title} description={description} />
+	<body>
+		<header>
+			<Nav />
+		</header>
+		<div class="main-content">
+			<slot />
+		</div>
+		<Footer />
+	</body>
+</html>
