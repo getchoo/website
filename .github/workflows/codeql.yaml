@@ -10,6 +10,9 @@ on:
 
       - "tsconfig.json"
 
+      - "flake.nix"
+      - "flake.lock"
+
       - ".github/workflows/codeql.yaml"
   pull_request:
     paths:

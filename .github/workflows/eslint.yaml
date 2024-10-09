@@ -13,6 +13,9 @@ on:
       - "eslint.config.js"
       - "tsconfig.json"
 
+      - "flake.nix"
+      - "flake.lock"
+
       - ".github/workflows/eslint.yaml"
   pull_request:
     paths:
