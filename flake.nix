@@ -30,10 +30,10 @@
         {
           default = pkgs.mkShellNoCC {
             packages = baseNodeTools ++ [
-              # Node tools
+              # Language servers
               pkgs.astro-language-server
-              pkgs.oxlint
               pkgs.typescript-language-server
+              pkgs.vscode-langservers-extracted
 
               # For CI
               pkgs.actionlint
