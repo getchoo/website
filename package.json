@@ -12,7 +12,7 @@
 		"lint": "eslint ."
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.3",
+		"@astrojs/check": "^0.9.4",
 		"@astrojs/sitemap": "^3.2.0",
 		"@catppuccin/palette": "^1.4.0",
 		"@eslint/js": "^9.12.0",
