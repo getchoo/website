@@ -22,6 +22,9 @@ on:
 
       - "tsconfig.json"
 
+      - "flake.nix"
+      - "flake.lock"
+
       - ".github/workflows/codeql.yaml"
   workflow_dispatch:
 
