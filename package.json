@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@astrojs/sitemap": "^3.2.0",
+		"@astrojs/sitemap": "^3.2.1",
 		"@catppuccin/palette": "^1.4.0",
 		"@eslint/js": "^9.13.0",
 		"@fontsource/noto-sans": "^5.1.0",
