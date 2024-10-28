@@ -15,8 +15,8 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1
       '@catppuccin/palette':
-        specifier: ^1.4.0
-        version: 1.4.0
+        specifier: ^1.5.0
+        version: 1.5.0
       '@eslint/js':
         specifier: ^9.13.0
         version: 9.13.0
@@ -201,8 +201,8 @@ packages:
     resolution: {integrity: sha512-vwIVdXG+j+FOpkwqHRcBgHLYNL7XMkufrlaFvL9o6Ai9sJn9+PdyIL5qa0XzTZw084c+u9LOls53eoZWP/W5WQ==}
     engines: {node: '>=6.9.0'}
 
-  '@catppuccin/palette@1.4.0':
-    resolution: {integrity: sha512-Npdg/QFeMAEbRVlnJqc1xE3i7NI4liSq4tTTXk4U/L3vPEiqw3bZQJRLYjuP0Vq2AEDNS5H5Li+lk27c38sP4g==}
+  '@catppuccin/palette@1.5.0':
+    resolution: {integrity: sha512-SQd/1h2gkK+nA5SWfd7NnUA/RsM8fIMJaqB8HzwATlNSDtPzTI7qmy3ei+jlgThlGILvdDt0C5CJ+3n/G9trKw==}
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -3159,7 +3159,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.25.7
       to-fast-properties: 2.0.0
 
-  '@catppuccin/palette@1.4.0': {}
+  '@catppuccin/palette@1.5.0': {}
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:
