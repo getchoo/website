@@ -29,7 +29,7 @@
 		"sass": "^1.81.0",
 		"sharp": "^0.33.5",
 		"typescript": "^5.6.3",
-		"typescript-eslint": "^8.14.0"
+		"typescript-eslint": "^8.15.0"
 	},
 	"prettier": {
 		"plugins": [
