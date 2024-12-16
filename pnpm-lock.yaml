@@ -18,8 +18,8 @@ importers:
         specifier: ^1.7.1
         version: 1.7.1
       '@eslint/js':
-        specifier: ^9.16.0
-        version: 9.16.0
+        specifier: ^9.17.0
+        version: 9.17.0
       '@fontsource/noto-sans':
         specifier: ^5.1.0
         version: 5.1.0
