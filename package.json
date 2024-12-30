@@ -16,7 +16,7 @@
 		"@astrojs/sitemap": "^3.2.1",
 		"@catppuccin/palette": "^1.7.1",
 		"@eslint/js": "^9.17.0",
-		"@fontsource/noto-sans": "^5.1.0",
+		"@fontsource/noto-sans": "^5.1.1",
 		"@microsoft/eslint-formatter-sarif": "^3.1.0",
 		"@types/eslint__js": "^8.42.3",
 		"astro": "^4.16.18",
