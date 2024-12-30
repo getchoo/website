@@ -21,8 +21,8 @@ importers:
         specifier: ^9.17.0
         version: 9.17.0
       '@fontsource/noto-sans':
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: ^5.1.1
+        version: 5.1.1
       '@microsoft/eslint-formatter-sarif':
         specifier: ^3.1.0
         version: 3.1.0
@@ -400,8 +400,8 @@ packages:
     resolution: {integrity: sha512-2b/g5hRmpbb1o4GnTZax9N9m0FXzz9OV42ZzI4rDDMDuHUqigAiQCEWChBWCY4ztAGVRjoWT19v0yMmc5/L5kA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fontsource/noto-sans@5.1.0':
-    resolution: {integrity: sha512-P6X+ynPOteCsbUHI7rU4UIpRJcuraJ3OllKqPIjKgxPZS0yPtxFyquADb4SmcgZosRrgqDy34/dcSIhio3Qx4Q==}
+  '@fontsource/noto-sans@5.1.1':
+    resolution: {integrity: sha512-WesuII3BzvzVr0JqYIgnEeJPwXvpFAo9tNCMH1AqoLSCdStKJugMaIcVJ/sT+Pw9ytIlUO3ccbqbe+BhhsXm9g==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -3224,7 +3224,7 @@ snapshots:
     dependencies:
       levn: 0.4.1
 
-  '@fontsource/noto-sans@5.1.0': {}
+  '@fontsource/noto-sans@5.1.1': {}
 
   '@humanfs/core@0.19.1': {}
 
