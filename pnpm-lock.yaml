@@ -31,7 +31,7 @@ importers:
         version: 8.42.3
       astro:
         specifier: ^4.16.18
-        version: 4.16.18(rollup@4.24.0)(sass@1.83.0)(typescript@5.7.2)
+        version: 4.16.18(rollup@4.24.0)(sass@1.83.1)(typescript@5.7.2)
       eslint:
         specifier: ^9.17.0
         version: 9.17.0(jiti@1.21.6)
@@ -51,8 +51,8 @@ importers:
         specifier: ^0.14.1
         version: 0.14.1
       sass:
-        specifier: ^1.83.0
-        version: 1.83.0
+        specifier: ^1.83.1
+        version: 1.83.1
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -2323,8 +2323,8 @@ packages:
   sass-formatter@0.7.9:
     resolution: {integrity: sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw==}
 
-  sass@1.83.0:
-    resolution: {integrity: sha512-qsSxlayzoOjdvXMVLkzF84DJFc2HZEL/rFyGIKbbilYtAvlCxyuzUeff9LawTn4btVnLKg75Z8MMr1lxU1lfGw==}
+  sass@1.83.1:
+    resolution: {integrity: sha512-EVJbDaEs4Rr3F0glJzFSOvtg2/oy2V/YrGFPqPY24UqcLDWcI9ZY5sN+qyO3c/QCZwzgfirvhXvINiJCE/OLcA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -3832,7 +3832,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro@4.16.18(rollup@4.24.0)(sass@1.83.0)(typescript@5.7.2):
+  astro@4.16.18(rollup@4.24.0)(sass@1.83.1)(typescript@5.7.2):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -3888,8 +3888,8 @@ snapshots:
       tsconfck: 3.1.4(typescript@5.7.2)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 5.4.11(sass@1.83.0)
-      vitefu: 1.0.4(vite@5.4.11(sass@1.83.0))
+      vite: 5.4.11(sass@1.83.1)
+      vitefu: 1.0.4(vite@5.4.11(sass@1.83.1))
       which-pm: 3.0.0
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
@@ -5618,7 +5618,7 @@ snapshots:
     dependencies:
       suf-log: 2.5.3
 
-  sass@1.83.0:
+  sass@1.83.1:
     dependencies:
       chokidar: 4.0.1
       immutable: 5.0.2
@@ -5965,18 +5965,18 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@5.4.11(sass@1.83.0):
+  vite@5.4.11(sass@1.83.1):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
       rollup: 4.24.0
     optionalDependencies:
       fsevents: 2.3.3
-      sass: 1.83.0
+      sass: 1.83.1
 
-  vitefu@1.0.4(vite@5.4.11(sass@1.83.0)):
+  vitefu@1.0.4(vite@5.4.11(sass@1.83.1)):
     optionalDependencies:
-      vite: 5.4.11(sass@1.83.0)
+      vite: 5.4.11(sass@1.83.1)
 
   volar-service-css@0.0.61(@volar/language-service@2.4.5):
     dependencies:
