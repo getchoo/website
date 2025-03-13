@@ -9,6 +9,8 @@ updates:
     groups:
       security:
         applies-to: security-updates
+        patterns:
+          - "*"
       regular:
         applies-to: version-updates
         update-types:
@@ -16,7 +18,7 @@ updates:
           - patch
       major:
         applies-to: version-updates
-        version-types:
+        update-types:
           - major
 
   - package-ecosystem: "github-actions"
