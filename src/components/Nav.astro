@@ -7,12 +7,19 @@ const navLinks = [
 ];
 ---
 
-<nav>
-	{
-		navLinks.map(({ name, url }) => (
-			<div>
-				<a href={url}>{name}</a>
-			</div>
-		))
-	}
+<nav class="navbar">
+	<div class="navbar-start"></div>
+	<div class="navbar-center lg:flex">
+		<ul class="menu menu-horizontal">
+			{
+				navLinks.map(({ name, url }) => (
+					<li>
+						<a class="btn btn-ghost text-xl" href={url}>
+							{name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
 </nav>
