@@ -6,7 +6,7 @@ description: Information about Getchoo
 
 # About Me
 
-I am a 19 year old software developer (when I have the time) based in Florida.
+I am a 20 year old software developer (when I have the time) based in Florida.
 Most commonly, I am contributing to the
 [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) community
 -- specifically for projects like [NixOS and nixpkgs](https://nixos.org),
