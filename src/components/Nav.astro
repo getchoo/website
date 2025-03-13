@@ -9,12 +9,15 @@ const navLinks = [
 
 <nav class="navbar">
 	<div class="navbar-start"></div>
-	<div class="navbar-center lg:flex">
-		<ul class="menu menu-horizontal">
+	<div class="navbar-center">
+		<!-- FIXME: Using a grid to scale this on mobile is dumb -->
+		<ul
+			class="not-prose menu menu-horizontal grid grid-cols-2 gap-2 lg:flex"
+		>
 			{
 				navLinks.map(({ name, url }) => (
 					<li>
-						<a class="btn btn-ghost text-xl" href={url}>
+						<a class="prose btn text-lg lg:text-xl" href={url}>
 							{name}
 						</a>
 					</li>
@@ -22,4 +25,5 @@ const navLinks = [
 			}
 		</ul>
 	</div>
+	<div class="navbar-end"></div>
 </nav>
