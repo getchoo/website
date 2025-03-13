@@ -5,10 +5,30 @@ updates:
     schedule:
       interval: "weekly"
     commit-message:
-      prefix: "chore(node_modules)"
+      prefix: "chore(deps)"
+    groups:
+      security:
+        applies-to:
+          - security-updates
+      regular:
+        applies-to:
+          - version-updates
+        update-types:
+          - minor
+          - patch
+      major:
+        applies-to:
+          - version-updates
+        version-types:
+          - major
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
     commit-message:
       prefix: "ci"
+    groups:
+      actions:
+        patterns:
+          - "*"
