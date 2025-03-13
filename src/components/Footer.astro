@@ -9,13 +9,13 @@ const repositoryUrl = "https://github.com/getchoo/website";
 		<p>
 			{
 				commitSha && (
-					<p>
+					<>
 						Site version
 						<a href={`${repositoryUrl}/commit/${commitSha}`}>
 							{commitSha.substring(0, 7)}
 						</a>
-						.
-					</p>
+						<br />
+					</>
 				)
 			}
 			Content is All Rights Reserved.
