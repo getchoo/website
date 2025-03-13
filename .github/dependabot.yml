@@ -8,17 +8,14 @@ updates:
       prefix: "chore(deps)"
     groups:
       security:
-        applies-to:
-          - security-updates
+        applies-to: security-updates
       regular:
-        applies-to:
-          - version-updates
+        applies-to: version-updates
         update-types:
           - minor
           - patch
       major:
-        applies-to:
-          - version-updates
+        applies-to: version-updates
         version-types:
           - major
 
