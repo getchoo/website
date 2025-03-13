@@ -38,7 +38,7 @@ const gifButtons = [
 ];
 ---
 
-<div class="gif-buttons">
+<div class="flex flex-row flex-wrap items-center justify-center not-prose">
 	{
 		gifButtons.map(({ buttonName, altText, link }) => {
 			const imageTag = (
@@ -49,7 +49,7 @@ const gifButtons = [
 			);
 
 			return (
-				<div class="gif-button">
+				<div class="p-1">
 					{link ? <a href={link}>{imageTag}</a> : imageTag}
 				</div>
 			);

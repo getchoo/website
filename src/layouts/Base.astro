@@ -9,13 +9,9 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
 <!doctype html>
 <html lang="en">
 	<Head title={title} description={description} />
-	<body>
-		<header>
-			<Nav />
-		</header>
-		<div class="main-content">
-			<slot />
-		</div>
+	<body class="prose lg:prose-xl mx-auto max-w-3/4 lg:max-w-1/2">
+		<Nav />
+		<slot />
 		<Footer />
 	</body>
 </html>

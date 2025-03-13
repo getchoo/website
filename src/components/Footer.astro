@@ -4,22 +4,25 @@ const commitSha =
 const repositoryUrl = "https://github.com/getchoo/website";
 ---
 
-<footer>
-	{
-		commitSha && (
-			<p>
-				Site version
-				<a href={`${repositoryUrl}/commit/${commitSha}`}>
-					{commitSha.substring(0, 7)}
-				</a>
-				.
-			</p>
-		)
-	}
-	<p>Content is All Rights Reserved.</p>
-	<p>
-		The <a href={repositoryUrl}>source code</a> is available under the <a
-			href="https://spdx.org/licenses/MIT.html">MIT License</a
-		>.
-	</p>
+<footer class="footer footer-center footer-horizontal">
+	<aside>
+		<p>
+			{
+				commitSha && (
+					<p>
+						Site version
+						<a href={`${repositoryUrl}/commit/${commitSha}`}>
+							{commitSha.substring(0, 7)}
+						</a>
+						.
+					</p>
+				)
+			}
+			Content is All Rights Reserved.
+			<br />
+			The <a href={repositoryUrl}>source code</a> is available under the <a
+				href="https://spdx.org/licenses/MIT.html">MIT License</a
+			>.
+		</p>
+	</aside>
 </footer>
