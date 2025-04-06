@@ -1,3 +1,3 @@
 # Website
 
-My personal website, made with [Astro](https://astro.build/)
+My personal website. Made with [Astro](https://astro.build/), many hours of CSS annoyance, MDN reading, 🍃, and ❤️
