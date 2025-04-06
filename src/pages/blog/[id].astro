@@ -3,8 +3,8 @@ import type { ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
 import { getCollection, render } from "astro:content";
 
-import Base from "@layouts/Base.astro";
-import { toNiceDateString } from "@utils";
+import Base from "@/layouts/Base.astro";
+import { toNiceDateString } from "@/utils";
 
 export const getStaticPaths = async () => {
 	const posts = await getCollection("blog");
