@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+
+import Base from "@/layouts/Base.astro";
+import { toNiceDateString } from "@/utils";
+
+const posts = await getCollection("blog");
+---
+
+<Base description="My blog">
+	<h1>Blog</h1>
+
+	<ul>
+		{
+			posts
+				.sort(
+					(p1, p2) =>
+						p2.data.publishedDate.getTime() -
+						p1.data.publishedDate.getTime(),
+				)
+				.filter((post) => !post.data.draft)
+				.map((post) => (
+					<li>
+						<p>
+							<a href={`/blog/${post.id}`}>{post.data.title}</a> -{" "}
+							{toNiceDateString(post.data.publishedDate)}
+						</p>
+					</li>
+				))
+		}
+	</ul>
+</Base>

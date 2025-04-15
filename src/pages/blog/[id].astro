@@ -1,0 +1,58 @@
+---
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+import { getCollection, render } from "astro:content";
+
+import Base from "@/layouts/Base.astro";
+import { toNiceDateString } from "@/utils";
+
+export const getStaticPaths = async () => {
+	const posts = await getCollection("blog");
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: { post },
+	}));
+};
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/blog/*",
+);
+const optimizedImage = await getImage({
+	src: blogImages[`/src/assets/blog/${post.data.image?.name}`](),
+});
+---
+
+<Base description={post.data.description}>
+	<h1>{post.data.title}</h1>
+
+	<p>
+		Published on: {toNiceDateString(post.data.publishedDate)}
+		{
+			post.data.lastEditedDate && (
+				<>
+					<br />
+					Last edited: {toNiceDateString(post.data.lastEditedDate)}
+				</>
+			)
+		}
+	</p>
+
+	{
+		post.data.image && (
+			<>
+				<meta property="og:image" content={optimizedImage.src} />
+				<img
+					src={optimizedImage.src}
+					alt={post.data.image.alt}
+					class="place-self-center"
+					{...optimizedImage.attributes}
+				/>
+			</>
+		)
+	}
+
+	<Content />
+</Base>

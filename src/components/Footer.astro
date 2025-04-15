@@ -11,15 +11,16 @@ const repositoryUrl = "https://github.com/getchoo/website";
 				commitSha && (
 					<>
 						Site version
-						<a href={`${repositoryUrl}/commit/${commitSha}`}>
-							{commitSha.substring(0, 7)}
-						</a>
-						<br />
+						<>
+							<a href={`${repositoryUrl}/commit/${commitSha}`}>
+								{commitSha.substring(0, 7)}
+							</a>
+							<br />
+						</>
 					</>
 				)
 			}
-			Content is All Rights Reserved.
-			<br />
+			Content is All Rights Reserved.<br />
 			The <a href={repositoryUrl}>source code</a> is available under the <a
 				href="https://spdx.org/licenses/MIT.html">MIT License</a
 			>.
