@@ -11,6 +11,6 @@ export default teslint.config(
 	...astro.configs["jsx-a11y-strict"],
 	prettier,
 	{
-		ignores: ["src/env.d.ts"],
+		ignores: ["src/env.d.ts", ".astro/"],
 	},
 );
