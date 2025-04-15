@@ -18,10 +18,11 @@ You might be most interested in my [GitHub profile](https://github.com/getchoo).
 Nowadays I'm primarily focusing on:
 
 - Modern Linux app deployment tools
-  - [Nix](https://nix.dev)
-  - [Flatpak](https://flatpak.org)
-  - [AppImage](https://appimage.org)
-  - [Containers](https://www.redhat.com/en/topics/containers)
+
+    - [Nix](https://nix.dev)
+    - [Flatpak](https://flatpak.org)
+    - [AppImage](https://appimage.org)
+    - [Containers](https://www.redhat.com/en/topics/containers)
 
 - [Reproducible builds](https://reproducible-builds.org/)
 - [Free software supply chain security](https://project.linuxfoundation.org/hubfs/Reports/oss_supply_chain_security.pdf?hsLang=en)

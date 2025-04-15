@@ -10,7 +10,7 @@ image:
         "Service alerting at home: `systemd-creds cat webhook-url | xargs curl -X POST -F "content=$CONTENT"`"
 ---
 
-For a while I have been using the [Victoria Stack](https://victoriametrics.com/) and [Grafana's alerting feature](https://grafana.com/docs/grafana/latest/alerting/) to notify of me of service failures on my servers. While having an alerting *and* monitoring solution was fun, I quickly realized I wasn't really using the monitoring part all that often; alerting was the main feature I was looking for.
+For a while I have been using the [Victoria Stack](https://victoriametrics.com/) and [Grafana's alerting feature](https://grafana.com/docs/grafana/latest/alerting/) to notify of me of service failures on my servers. While having an alerting _and_ monitoring solution was fun, I quickly realized I wasn't really using the monitoring part all that often; alerting was the main feature I was looking for.
 
 I started exploring some other options, like running Promtheus' [AlertManager](https://prometheus.io/docs/alerting/latest/alertmanager/) by itself, but I found they generally used a lot of resources and took a lot of setup for something I didn't think I was asking much from.
 
