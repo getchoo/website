@@ -44,7 +44,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31
@@ -64,7 +64,7 @@ jobs:
             --output-file /tmp/results.sarif'
 
       - name: Upload Results
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: /tmp/results.sarif
           wait-for-processing: true
